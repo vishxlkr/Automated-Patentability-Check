@@ -1,0 +1,9 @@
+{
+  "model_info": {
+    "mid_threshold": 0.03,
+    "high_threshold": 0.2733241797029424,
+    "vocabulary_size": 5000,
+    "bert_enabled": true
+  },
+  "timestamp": "2026-04-10T20:31:56.879318"
+}

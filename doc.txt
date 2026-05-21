@@ -1,0 +1,167 @@
+$ python run3.py --main
+======================================================================
+AUTOMATED PATENTABILITY CHECK SYSTEM - FINAL VERSION
+Enhancements: Random Sampling + BERT + Hybrid Similarity
+======================================================================
+
+Author: Devika Bakshi (122CS0301)
+Supervisor: Asst. Prof. Sumanta Pyne
+NIT Rourkela
+
+Start Time: 2026-04-10 19:48:21
+======================================================================
+PHASE 1: BUILDING CITATION-AWARE DATASET
+======================================================================
+
+[1/5] Analyzing citation graph...
+Citation columns: ['patent_id', 'citation_sequence', 'citation_patent_id', 'citation_date', 'record_name', 'wipo_kind', 'citation_category']
+Using columns: citing='patent_id', cited='citation_patent_id'
+Found 3,019,111 core patents with bidirectional citations
+Randomly sampled 10,000 core patents from 3,019,111
+
+[2/5] Loading patent data...
+Loaded 10,000 patents
+
+[3/5] Loading abstract data...
+Final patent count: 8,484
+
+[4/5] Preprocessing patent texts...
+
+[5/5] Extracting citation pairs...
+Found 454 citation pairs
+
+Creating balanced training pairs...
+Created 908 training pairs
+  Positive: 454
+  Negative: 454
+
+======================================================================
+TF-IDF MODEL TRAINING & THRESHOLD LEARNING
+======================================================================
+
+Data Split:
+  Training: 635 pairs
+  Validation: 136 pairs
+  Test: 137 pairs
+Vocabulary size: 5,000
+
+Computing cosine similarities...
+
+Learned MID threshold: 0.030 (F1=0.904)
+Learned HIGH threshold (75th percentile): 0.273
+
+--------------------------------------------------
+TEST SET PERFORMANCE (TF-IDF)
+--------------------------------------------------
+Accuracy:  0.810 (81.0%)
+Precision: 0.828
+Recall:    0.779
+F1-Score:  0.803
+AUC-ROC:   0.881
+
+Confusion Matrix:
+  TN: 58  FP: 11
+  FN: 15  TP: 53
+
+Plot saved as 'tfidf_evaluation_results.png'
+
+
+Enable BERT semantic model? (y/n - requires torch/transformers): y
+
+======================================================================
+INITIALIZING BERT SEMANTIC MODEL
+======================================================================
+Loading bert-base-uncased...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100%|████████████████████████████████████████████████████████████████████████████| 570/570 [00:00<00:00, 1.70MB/s]
+tokenizer_config.json: 100%|█████████████████████████████████████████████████████████████████| 48.0/48.0 [00:00<00:00, 124kB/s]
+vocab.txt: 232kB [00:00, 785kB/s]
+tokenizer.json: 466kB [00:00, 1.06MB/s]
+model.safetensors: 100%|████████████████████████████████████████████████████████████████████| 440M/440M [00:42<00:00, 10.5MB/s]
+Loading weights: 100%|█████████████████████████████████████████████████████████████████████| 199/199 [00:00<00:00, 3893.72it/s]
+BertModel LOAD REPORT from: bert-base-uncased
+Key                                        | Status     |  | 
+-------------------------------------------+------------+--+-
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED |  | 
+cls.seq_relationship.weight                | UNEXPECTED |  | 
+cls.predictions.transform.dense.bias       | UNEXPECTED |  | 
+cls.predictions.bias                       | UNEXPECTED |  | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED |  | 
+cls.predictions.transform.dense.weight     | UNEXPECTED |  | 
+cls.seq_relationship.bias                  | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:   can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+✓ BERT loaded successfully on CPU
+
+======================================================================
+RUNNING MODEL COMPARISON
+======================================================================
+
+======================================================================
+MODEL COMPARISON: TF-IDF vs BERT vs HYBRID
+======================================================================
+
+Computing similarities for all models...
+  Progress: 150/137
+
+----------------------------------------------------------------------
+MODEL COMPARISON RESULTS
+----------------------------------------------------------------------
+Model        Accuracy     Precision    Recall       F1           AUC-ROC     
+----------------------------------------------------------------------
+TF-IDF       0.810        0.828        0.779        0.803        0.881       
+BERT         0.496        0.496        1.000        0.663        0.779       
+Hybrid       0.496        0.496        1.000        0.663        0.878       
+
+Plot saved as 'model_comparison.png'
+
+======================================================================
+NOVELTY PREDICTION (Method: HYBRID)
+======================================================================
+
+Query Patent:
+  
+            A novel quantum-inspired neural network architecture for real-time
+            pattern recognition in high-dimensional data spaces. The system
+            combines adaptive resonance theo...
+
+Comparing with 8,484 existing patents...
+
+Max Similarity: 0.5701
+Mean Similarity: 0.3972
+
+--------------------------------------------------
+TOP 5 SIMILAR PATENTS
+--------------------------------------------------
+
+  Patent: RE48056
+  Title: Ergonomic man-machine interface incorporating adaptive pattern recognition based...
+    Similarity: 0.5701
+
+  Patent: 8433121
+  Title: Method for brightness level calculation in the area of interest of the digital X...
+    Similarity: 0.5255
+
+  Patent: 10127283
+  Title: Projecting effect of in-flight streamed data on a relational database...
+    Similarity: 0.5255
+
+  Patent: 6795406
+  Title: Methods and apparatus for enhancing wireless data network telephony, including q...
+    Similarity: 0.5253
+
+  Patent: 6427920
+  Title: High frequency masking of embedded digital data to improve appearance...
+    Similarity: 0.5199
+
+==================================================
+DECISION: REJECT (Highly Similar - Not Patentable)
+==================================================
+
+Results saved to 'patent_final_results.json'
+
+======================================================================
+EXECUTION COMPLETE
+======================================================================
+End Time: 2026-04-10 20:31:56

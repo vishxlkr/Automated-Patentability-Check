@@ -1,0 +1,11 @@
+{
+  "model_info": {
+    "mid_threshold": 0.03,
+    "high_threshold": 0.18585074407821,
+    "vocabulary_size": 2633,
+    "semantic_model": null,
+    "is_fine_tuned": false
+  },
+  "training_history": [],
+  "timestamp": "2026-04-10T16:48:56.783672"
+}

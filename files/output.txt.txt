@@ -1,0 +1,77 @@
+============================================================
+BUILDING CITATION-AWARE DATASET
+============================================================
+
+1. Analyzing citation graph (chunked)...
+Citation columns found: ['patent_id', 'citation_sequence', 'citation_patent_id', 'citation_date', 'record_name', 'wipo_kind', 'citation_category']
+============================================================
+BUILDING CITATION-AWARE DATASET
+============================================================
+
+1. Analyzing citation graph (chunked)...
+============================================================
+BUILDING CITATION-AWARE DATASET
+============================================================
+
+============================================================
+BUILDING CITATION-AWARE DATASET
+============================================================
+BUILDING CITATION-AWARE DATASET
+============================================================
+
+1. Analyzing citation graph (chunked)...
+Citation columns found: ['patent_id', 'citation_sequence', 'citation_patent_id', 'citation_date', 'record_name', 'wipo_kind', 'citation_category']
+Found 3019111 core patents with bidirectional citations
+Limited to 10000 core patents for memory
+
+2. Loading patent data for core patents...
+Loaded 10000 patents from patent file
+Final patent count after merge: 8445
+
+Preprocessing patent texts...
+
+3. Extracting citation pairs among these patents...
+Found 546 citation pairs within the dataset
+
+4. Creating training pairs...
+Created 1092 pairs (546 positive, 546 negative)
+
+============================================================
+TRAINING & EVALUATION
+============================================================
+
+Train: 764, Val: 164, Test: 164
+Vocabulary size: 3339
+
+Optimal threshold: 0.050 (F1=0.779)
+
+============================================================
+TEST SET PERFORMANCE
+============================================================
+Accuracy:  0.787 (78.7%)
+Precision: 0.885
+Recall:    0.659
+F1-Score:  0.755
+AUC-ROC:   0.867
+
+Confusion Matrix:
+  TN: 75  FP: 7
+  FN: 28  TP: 54
+
+============================================================
+NOVELTY PREDICTION
+============================================================
+
+Max similarity: 0.233
+Mean similarity: 0.013
+Median similarity: 0.000
+
+Found 728 similar patents.
+Top similar patents:
+  7974215 - System and method of network diagnosis... (sim: 0.233)
+  6754202 - Network call-back data capture method and apparatus... (sim: 0.229)
+  6016382 - Method for jump-reproducing video data of moving picture coded with high efficie... (sim: 0.226)
+  4035844 - Novel trouser-like article of clothing... (sim: 0.224)
+  5812412 - Charged beam pattern data generating method and a charged beam pattern data gene... (sim: 0.223)
+
+DECISION: REJECT (Highly Similar)

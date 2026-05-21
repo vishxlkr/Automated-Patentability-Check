@@ -1,0 +1,628 @@
+======================================================================
+HYBRID PATENT NOVELTY DETECTION SYSTEM — v16
+TF-IDF + MPNet Semantic Embeddings + Rule-Based Overrides
+THREE-WAY: [NOVEL] | [INCREMENTAL] | [NOT NOVEL]
+======================================================================
+
+Author    : Devika Bakshi (122CS0301)
+Supervisor: Asst. Prof. Sumanta Pyne
+Institute : NIT Rourkela
+Start     : 2026-05-10 17:16:12
+
+Semantic model : sentence-transformers/all-mpnet-base-v2
+  → 768-dim embeddings, L2-normalised
+  → Cosine similarity via dot product
+  → v16: Score-ratio incremental heuristic (Step 9b)
+
+[Device]: cuda
+   GPU: NVIDIA GeForce RTX 3060 Laptop GPU
+
+[Model]: sentence-transformers/all-mpnet-base-v2
+[Mode]:  Hybrid TF-IDF + MPNet + Rule Overrides + Incremental Zone
+======================================================================
+BUILDING CITATION-AWARE DATASET
+======================================================================
+
+[1/5] Analyzing citation graph...
+Columns: citing='patent_id', cited='citation_patent_id'
+Core patents: 5,237,624
+Sampled 10,000
+
+[2/5] Loading patent data...
+Loaded 10,000
+
+[3/5] Loading abstracts...
+Patent count: 8,642
+
+[4/5] Preprocessing...
+After filter: 8,641
+
+[5/5] Extracting citation pairs...
+Citation pairs: 253
+   [WARNING] Low citation density (0.000339%) — threshold adj applied
+Positive pairs: 253
+
+[INFO] Dataset / model changed — recomputing all embeddings
+   Hash: a7468b20 → 35a141c0
+
+======================================================================
+COMPUTING EMBEDDINGS
+======================================================================
+
+[1/2] TF-IDF (trigrams, 15k features)...
+   Dense TF-IDF cached: (8641, 15000)
+
+[2/2] MPNet semantic embeddings (768-dim)...
+
+   Loading: sentence-transformers/all-mpnet-base-v2
+   Smoke test — embedding dim: 768, norm: 1.0000
+   ✓ Semantic similarity model loaded (MPNet)
+   Embedding norms — mean: 1.0000  std: 0.000000  (should be 1.000 ± 0.001)
+   Embedding dim: 768
+
+Embeddings done!
+
+======================================================================
+TRAINING HYBRID MODEL
+======================================================================
+  Architecture: TF-IDF + MPNet Semantic + Platt Calibration + Incremental Zone
+
+   Train+: 178 | Val+: 75
+
+[1/4] Training positives...
+   Valid: 178
+
+[2/4] Mining negatives (three-tier v15)...
+
+   Mining three-tier negatives (hard/medium/easy)...
+   Mined 71 hard + 62 medium + 45 easy negatives
+
+   Total: 356 (pos=178, neg=178)
+
+[3/4] Learning fusion weights (TF-IDF vs Semantic)...
+   Learned weights: TF-IDF=0.382, Semantic=0.618
+   Score separation: pos=0.380  neg=0.045  gap=0.334
+
+[4/4] Validation + calibration + threshold optimisation...
+
+   Mining three-tier negatives (hard/medium/easy)...
+   Mined 30 hard + 26 medium + 19 easy negatives
+
+   Val: 150 (pos=75, neg=75)
+   Calibrator fitted: True
+   Calibrated range: [0.289, 0.922]
+     Pos mean: 0.667
+     Neg mean: 0.333
+
+   Optimising rejection threshold (combined BAC+F1+Prec)...
+   Best combined score=0.8762 at t=0.420
+   Learned=0.420  Applied=0.500 (floor=0.50)
+   Acc=0.833  Prec=0.963  Rec=0.693  F1=0.806  BAC=0.833
+   AUC=0.926
+
+   [Sparsity adj] 0.500 → 0.470 (floor=0.45)
+
+[v16] Learning incremental zone thresholds from positive pair distribution...
+   [Note] Called after sparsity adj — final_threshold = 0.470
+
+   Positive pair score distribution (n=253):
+     TF-IDF   — p25=0.038  p50=0.099  p75=0.178  p90=0.276
+     Semantic — p25=0.714  p50=0.771  p75=0.832
+     Gap      — p25=0.600  p50=0.650  p75=0.694
+     Cal(pos) — p25=0.268  p50=0.502  p70=0.594
+
+   Incremental zone thresholds (learned):
+     incr_fraction        = 0.960
+     INCREMENTAL_CAL_LOW  = 0.470 × 0.960 = 0.451
+     INCREMENTAL_CAL_HIGH = final_threshold = 0.470
+     INCREMENTAL_TFIDF_LOW  = 0.178  (75th pct)
+     INCREMENTAL_TFIDF_HIGH = 0.276  (90th pct)
+     INCREMENTAL_GAP_MAX    = 0.600  (fixed)
+
+======================================================================
+HELD-OUT TEST SET
+======================================================================
+
+   Mining three-tier negatives (hard/medium/easy)...
+   Mined 80 hard + 70 medium + 50 easy negatives
+Test: 400 (pos=200, neg=200)
+
+======================================================================
+MODEL EVALUATION
+======================================================================
+
+   Eval: 400 (pos=200, neg=200)
+   Model: sentence-transformers/all-mpnet-base-v2  ✓ MPNet Semantic
+   [v16] INCREMENTAL counts as NOVEL for binary classification metrics
+
+   RAW Hybrid — Pos: 0.368  Neg: 0.043  Sep: 0.325
+   CALIBRATED — Pos: 0.656  Neg: 0.333  Sep: 0.323
+
+[Classification] (threshold=0.470):
+   Accuracy:   0.843  (84.2%)
+   Bal Acc:    0.843
+   Precision:  0.966
+   Recall:     0.710
+   F1:         0.818
+   AUC-ROC:    0.912
+   Avg Prec:   0.936
+
+[Retrieval] (200 positives):
+   Recall@10  : 0.395  (39.5%)
+   Recall@20  : 0.435  (43.5%)
+   Recall@50  : 0.510  (51.0%)
+   Recall@100 : 0.560  (56.0%)
+
+[Plot] Computing hybrid similarity distribution...
+   Positive pairs: 200, Negative pairs: 200
+   [Plot saved] hybrid_similarity_distribution.png
+
+======================================================================
+SAMPLE NOVELTY PREDICTIONS — v16
+======================================================================
+
+──────────────────────────────────────────────────────────────────────
+  Case A — Deep RL + CNN (EXPECT: NOT NOVEL)
+──────────────────────────────────────────────────────────────────────
+
+======================================================================
+NOVELTY PREDICTION — Hybrid TF-IDF + MPNet System v16
+======================================================================
+
+[Query]: A neural network processing system and method for real-time pattern recognition
+        using deep reinforcement learning and convolutional neural net...
+
+[Scores]:
+   Max Calibrated:            0.8732  (87.3%)
+   Effective Cal (dampened):  0.8732  (no dampening)
+   Top-3 Avg Calibrated:      0.8562  (85.6%)
+   Top-5 Avg Calibrated:      0.8465  (84.6%)
+   Top-result TF-IDF:         0.4041
+   Top-result Semantic:       0.7329
+   TF/Sem Ratio:              0.5514  (incr ratio heuristic if >= 0.58)
+   Semantic Gap (Sem - TF):   0.3288  (gap override if > 0.55 & sem > 0.75)
+   Median top-5 TF-IDF:       0.3197
+   Max TF-IDF (all results):  0.4041
+   Max Hybrid (all results):  0.6072
+   TF-IDF rank decay ratio:   0.8425  (rank3=0.3405 / rank1=0.4041)
+   Modern terms detected:     0
+
+[Decision Rules — v16]:
+   Step 0  — Dampening:         ○ skip  [max_tfidf=0.404 < 0.15]
+   Step 1  — ModernTerms:       ○ skip  [0 >= 2 & max_tfidf=0.404 < 0.35]
+   Step 2  — SemanticGap:       ○ skip  [gap=0.329 > 0.55 & tfidf=0.404 < 0.32 & sem=0.733 > 0.75]
+   Step 3  — StrongDrift:       ○ skip  [sem=0.733 > 0.8 & max_tfidf=0.404 < 0.28]
+   Step 4  — RankDecay:         ○ skip  [ratio=0.843 < 0.5 & sem=0.733 > 0.8 & max_tfidf < 0.28]
+   Rule 1  — Drift Safeguard:   ○ skip  [top_tfidf=0.404 < 0.2 & sem=0.733 > 0.72]
+   Rule 2  — Domain Coherence:  ○ skip  [median=0.320 < 0.15 & eff_cal=0.873 >= 0.4 & sem=0.733 < 0.6]
+   Rule 3  — TF-IDF Override:   ○ skip  [max_tfidf=0.404 < 0.15 & hybrid=0.607 < 0.55]
+   Rule 4  — Out-of-domain:     ○ skip  [eff_cal=0.873 < 0.4]
+   Step 9  — Incremental(zone): ○ skip  [eff_cal=0.873 in [0.451,0.470) ← ✓ | tfidf=0.404 in [0.178,0.276] | gap=0.329 < 0.600 | top3=0.856 >= 0.451]
+   Step 9b — Incremental(ratio):○ skip  [ratio=0.551 >= 0.58 & decay=0.843 <= 0.9 & tfidf=0.404 >= 0.4 & sem=0.733 in [0.75,0.88]]
+   Rule 5  — Dual Rejection:    ⚡ NOT NOVEL  [eff_cal=0.873 >= 0.470 AND top3=0.856 >= 0.470]
+
+[System Config — v16]:
+   Model        : sentence-transformers/all-mpnet-base-v2  ✓ MPNet
+   Threshold    : 0.470
+   Novelty floor: 0.400
+   Weights      : TF-IDF=0.382, Semantic=0.618
+   Inference    : 0.553s
+   Reason       : Strong prior art match found — calibrated score above rejection threshold
+   Confidence   : High
+
+============================================================
+MOST SIMILAR PATENT
+============================================================
+  ID        : 5781701
+  Title     : Neural network and method of using same...
+  TF-IDF    : 0.4041
+  Semantic  : 0.7329
+  Gap       : 0.3288
+  Hybrid    : 0.6072
+  Calibrated: 0.8732
+
+============================================================
+TOP 10 SIMILAR PATENTS
+============================================================
+
+ 1. 5781701  Neural network and method of using same...
+    TF=0.4041 | Sem=0.7329 | Hybrid=0.6072 | Cal=0.8732
+
+ 2. 11169514  Unsupervised anomaly detection, diagnosis, and correction in...
+    TF=0.3197 | Sem=0.7209 | Hybrid=0.5676 | Cal=0.8512
+
+ 3. 5644681  Learning method for neural network having discrete interconn...
+    TF=0.3405 | Sem=0.6895 | Hybrid=0.5561 | Cal=0.8443
+
+ 4. 5594916  Neural network processing system using semiconductor memorie...
+    TF=0.2621 | Sem=0.7170 | Hybrid=0.5431 | Cal=0.8362
+
+ 5. 11620597  Machine learning real property object detection and analysis...
+    TF=0.1759 | Sem=0.7487 ⚠ gap=0.573 | Hybrid=0.5298 | Cal=0.8275
+
+ 6. 11074714  Eye tracking method and system...
+    TF=0.2871 | Sem=0.6739 | Hybrid=0.5261 | Cal=0.8251
+
+ 7. 10679124  Using embedding functions with a deep network...
+    TF=0.1561 | Sem=0.7411 ⚠ gap=0.585 | Hybrid=0.5175 | Cal=0.8192
+
+ 8. 9666184  Method and apparatus for training language model and recogni...
+    TF=0.2282 | Sem=0.6921 | Hybrid=0.5148 | Cal=0.8173
+
+ 9. 7272242  Object detection in electro-optic sensor images...
+    TF=0.1338 | Sem=0.7445 ⚠ gap=0.611 | Hybrid=0.5111 | Cal=0.8147
+
+10. 11554785  Driving scenario machine learning network and driving enviro...
+    TF=0.1215 | Sem=0.7287 ⚠ gap=0.607 | Hybrid=0.4966 | Cal=0.8043
+
+============================================================
+  [DECISION]:   [NOT NOVEL] Prior Art Detected
+  [REASON]:     Strong prior art match found — calibrated score above rejection threshold
+  [CONFIDENCE]: High
+============================================================
+
+──────────────────────────────────────────────────────────────────────
+  Case B — RLHF / LLM alignment (EXPECT: NOVEL — post-2022 technology)
+──────────────────────────────────────────────────────────────────────
+
+======================================================================
+NOVELTY PREDICTION — Hybrid TF-IDF + MPNet System v16
+======================================================================
+
+[Query]: A method for aligning large language models using reinforcement learning from
+        human feedback (RLHF), comprising: a reward model fine-tuned on ...
+
+[Scores]:
+   Max Calibrated:            0.8428  (84.3%)
+   Effective Cal (dampened):  0.8428  (no dampening)
+   Top-3 Avg Calibrated:      0.8228  (82.3%)
+   Top-5 Avg Calibrated:      0.8055  (80.5%)
+   Top-result TF-IDF:         0.3078
+   Top-result Semantic:       0.7056
+   TF/Sem Ratio:              0.4362  (incr ratio heuristic if >= 0.58)
+   Semantic Gap (Sem - TF):   0.3978  (gap override if > 0.55 & sem > 0.75)
+   Median top-5 TF-IDF:       0.1840
+   Max TF-IDF (all results):  0.3078
+   Max Hybrid (all results):  0.5536
+   TF-IDF rank decay ratio:   0.5978  (rank3=0.1840 / rank1=0.3078)
+   Modern terms detected:     7 — constitutional ai, rlhf, large language model, kl divergence regularisation, ppo, reward model
+
+[Decision Rules — v16]:
+   Step 0  — Dampening:         ○ skip  [max_tfidf=0.308 < 0.15]
+   Step 1  — ModernTerms:       ⚡ → NOVEL  [7 >= 2 & max_tfidf=0.308 < 0.35]
+   Step 2  — SemanticGap:       ○ skip  [gap=0.398 > 0.55 & tfidf=0.308 < 0.32 & sem=0.706 > 0.75]
+   Step 3  — StrongDrift:       ○ skip  [sem=0.706 > 0.8 & max_tfidf=0.308 < 0.28]
+   Step 4  — RankDecay:         ○ skip  [ratio=0.598 < 0.5 & sem=0.706 > 0.8 & max_tfidf < 0.28]
+   Rule 1  — Drift Safeguard:   ○ skip  [top_tfidf=0.308 < 0.2 & sem=0.706 > 0.72]
+   Rule 2  — Domain Coherence:  ○ skip  [median=0.184 < 0.15 & eff_cal=0.843 >= 0.4 & sem=0.706 < 0.6]
+   Rule 3  — TF-IDF Override:   ○ skip  [max_tfidf=0.308 < 0.15 & hybrid=0.554 < 0.55]
+   Rule 4  — Out-of-domain:     ○ skip  [eff_cal=0.843 < 0.4]
+   Step 9  — Incremental(zone): ○ skip  [eff_cal=0.843 in [0.451,0.470) ← ✓ | tfidf=0.308 in [0.178,0.276] | gap=0.398 < 0.600 | top3=0.823 >= 0.451]
+   Step 9b — Incremental(ratio):○ skip  [ratio=0.436 >= 0.58 & decay=0.598 <= 0.9 & tfidf=0.308 >= 0.4 & sem=0.706 in [0.75,0.88]]
+   Rule 5  — Dual Rejection:    ⚡ NOT NOVEL  [eff_cal=0.843 >= 0.470 AND top3=0.823 >= 0.470]
+
+[System Config — v16]:
+   Model        : sentence-transformers/all-mpnet-base-v2  ✓ MPNet
+   Threshold    : 0.470
+   Novelty floor: 0.400
+   Weights      : TF-IDF=0.382, Semantic=0.618
+   Inference    : 0.502s
+   Reason       : Modern Terminology Override — 7 post-2022 AI terms detected: constitutional ai, rlhf, large language model, kl divergence regularisation, ppo.... Concept post-dates patent database → novel.
+   Confidence   : High (modern terminology override)
+
+============================================================
+MOST SIMILAR PATENT
+============================================================
+  ID        : 9666184
+  Title     : Method and apparatus for training language model and recognizing speech...
+  TF-IDF    : 0.3078
+  Semantic  : 0.7056
+  Gap       : 0.3978
+  Hybrid    : 0.5536
+  Calibrated: 0.8428
+
+============================================================
+TOP 10 SIMILAR PATENTS
+============================================================
+
+ 1. 9666184  Method and apparatus for training language model and recogni...
+    TF=0.3078 | Sem=0.7056 | Hybrid=0.5536 | Cal=0.8428
+
+ 2. 7856350  Reranking QA answers using language modeling...
+    TF=0.2368 | Sem=0.7171 | Hybrid=0.5335 | Cal=0.8300
+
+ 3. 10803855  Training acoustic models using connectionist temporal classi...
+    TF=0.1840 | Sem=0.6710 | Hybrid=0.4849 | Cal=0.7956
+
+ 4. 10325590  Language model modification for local speech recognition sys...
+    TF=0.1330 | Sem=0.6914 ⚠ gap=0.558 | Hybrid=0.4780 | Cal=0.7903
+
+ 5. 8924318  Online asynchronous reinforcement learning from concurrent c...
+    TF=0.1253 | Sem=0.6527 | Hybrid=0.4511 | Cal=0.7688
+
+ 6. 8229871  Systems and methods for computer aided inventing...
+    TF=0.1191 | Sem=0.6119 | Hybrid=0.4209 | Cal=0.7428
+
+ 7. 7561696  Delivering policy updates for protected content...
+    TF=0.1563 | Sem=0.5709 | Hybrid=0.4125 | Cal=0.7352
+
+ 8. 6525731  Dynamic view-dependent texture mapping...
+    TF=0.1555 | Sem=0.5592 | Hybrid=0.4049 | Cal=0.7283
+
+ 9. 9286715  Systems and methods for adjusting a virtual try-on...
+    TF=0.1169 | Sem=0.5960 | Hybrid=0.4035 | Cal=0.7270
+
+10. 9020247  Landmarks from digital photo collections...
+    TF=0.1141 | Sem=0.6058 | Hybrid=0.3995 | Cal=0.7233
+
+============================================================
+  [DECISION]:   [NOVEL] Potentially Novel
+  [REASON]:     Modern Terminology Override — 7 post-2022 AI terms detected: constitutional ai, rlhf, large language model, kl divergence regularisation, ppo.... Concept post-dates patent database → novel.
+  [CONFIDENCE]: High (modern terminology override)
+============================================================
+
+──────────────────────────────────────────────────────────────────────
+  Case C — Bicycle combination lock (EXPECT: NOVEL — unrelated domain)
+──────────────────────────────────────────────────────────────────────
+
+======================================================================
+NOVELTY PREDICTION — Hybrid TF-IDF + MPNet System v16
+======================================================================
+
+[Query]: A portable bicycle security device comprising a hardened steel shackle
+        and a four-digit numeric combination dial mechanism. The user selects a...
+
+[Scores]:
+   Max Calibrated:            0.8693  (86.9%)
+   Effective Cal (dampened):  0.8693  (no dampening)
+   Top-3 Avg Calibrated:      0.8358  (83.6%)
+   Top-5 Avg Calibrated:      0.8116  (81.2%)
+   Top-result TF-IDF:         0.2422
+   Top-result Semantic:       0.8211
+   TF/Sem Ratio:              0.2950  (incr ratio heuristic if >= 0.58)
+   Semantic Gap (Sem - TF):   0.5789  (gap override if > 0.55 & sem > 0.75)
+   Median top-5 TF-IDF:       0.1447
+   Max TF-IDF (all results):  0.2422
+   Max Hybrid (all results):  0.5999
+   TF-IDF rank decay ratio:   0.5975  (rank3=0.1447 / rank1=0.2422)
+   Modern terms detected:     0
+
+[Decision Rules — v16]:
+   Step 0  — Dampening:         ○ skip  [max_tfidf=0.242 < 0.15]
+   Step 1  — ModernTerms:       ○ skip  [0 >= 2 & max_tfidf=0.242 < 0.35]
+   Step 2  — SemanticGap:       ⚡ → NOVEL  [gap=0.579 > 0.55 & tfidf=0.242 < 0.32 & sem=0.821 > 0.75]
+   Step 3  — StrongDrift:       ⚡ → NOVEL  [sem=0.821 > 0.8 & max_tfidf=0.242 < 0.28]
+   Step 4  — RankDecay:         ○ skip  [ratio=0.598 < 0.5 & sem=0.821 > 0.8 & max_tfidf < 0.28]
+   Rule 1  — Drift Safeguard:   ○ skip  [top_tfidf=0.242 < 0.2 & sem=0.821 > 0.72]
+   Rule 2  — Domain Coherence:  ○ skip  [median=0.145 < 0.15 & eff_cal=0.869 >= 0.4 & sem=0.821 < 0.6]
+   Rule 3  — TF-IDF Override:   ○ skip  [max_tfidf=0.242 < 0.15 & hybrid=0.600 < 0.55]
+   Rule 4  — Out-of-domain:     ○ skip  [eff_cal=0.869 < 0.4]
+   Step 9  — Incremental(zone): ○ skip  [eff_cal=0.869 in [0.451,0.470) ← ✓ | tfidf=0.242 in [0.178,0.276] | gap=0.579 < 0.600 | top3=0.836 >= 0.451]
+   Step 9b — Incremental(ratio):○ skip  [ratio=0.295 >= 0.58 & decay=0.598 <= 0.9 & tfidf=0.242 >= 0.4 & sem=0.821 in [0.75,0.88]]
+   Rule 5  — Dual Rejection:    ⚡ NOT NOVEL  [eff_cal=0.869 >= 0.470 AND top3=0.836 >= 0.470]
+
+[System Config — v16]:
+   Model        : sentence-transformers/all-mpnet-base-v2  ✓ MPNet
+   Threshold    : 0.470
+   Novelty floor: 0.400
+   Weights      : TF-IDF=0.382, Semantic=0.618
+   Inference    : 0.455s
+   Reason       : Semantic Gap Override — Semantic (0.821) - TF-IDF (0.242) = gap 0.579 > 0.55 with semantic score > 0.75. High-level semantic match but no lexical overlap → novel.
+   Confidence   : High (semantic gap override)
+
+============================================================
+MOST SIMILAR PATENT
+============================================================
+  ID        : 8769999
+  Title     : Combination lock...
+  TF-IDF    : 0.2422
+  Semantic  : 0.8211
+  Gap       : 0.5789
+  Hybrid    : 0.5999
+  Calibrated: 0.8693
+
+============================================================
+TOP 10 SIMILAR PATENTS
+============================================================
+
+ 1. 8769999  Combination lock...
+    TF=0.2422 | Sem=0.8211 ⚠ gap=0.579 | Hybrid=0.5999 | Cal=0.8693
+
+ 2. 4872653  Shackle for use in limiting the movement of an end of a leaf...
+    TF=0.1515 | Sem=0.7522 ⚠ gap=0.601 | Hybrid=0.5226 | Cal=0.8227
+
+ 3. 9452872  Lockable cap for a bottle...
+    TF=0.1447 | Sem=0.7393 ⚠ gap=0.595 | Hybrid=0.5121 | Cal=0.8154
+
+ 4. 6870744  Clamping mechanism for clamping card-shaped electronic compo...
+    TF=0.1185 | Sem=0.6956 ⚠ gap=0.577 | Hybrid=0.4698 | Cal=0.7839
+
+ 5. 5683038  Tire dissection system...
+    TF=0.1293 | Sem=0.6457 | Hybrid=0.4483 | Cal=0.7665
+
+ 6. 4078001  N-1,3-dimethylbutyl-N'-1,4-dimethylpentyl-p-phenylenediamine...
+    TF=0.1220 | Sem=0.6408 | Hybrid=0.4425 | Cal=0.7616
+
+ 7. 10463140  Attachment apparatus for electronic device...
+    TF=0.1134 | Sem=0.6754 ⚠ gap=0.562 | Hybrid=0.4376 | Cal=0.7574
+
+ 8. 8934723  Presentation and organization of content...
+    TF=0.1403 | Sem=0.6010 | Hybrid=0.4249 | Cal=0.7463
+
+ 9. 4221409  Tamperproof shackle seals...
+    TF=0.0983 | Sem=0.7554 ⚠ gap=0.657 | Hybrid=0.4199 | Cal=0.7419
+
+10. 6962361  Security device for gooseneck trailers, trailer hitches, and...
+    TF=0.0980 | Sem=0.7469 ⚠ gap=0.649 | Hybrid=0.4143 | Cal=0.7369
+
+============================================================
+  [DECISION]:   [NOVEL] Potentially Novel
+  [REASON]:     Semantic Gap Override — Semantic (0.821) - TF-IDF (0.242) = gap 0.579 > 0.55 with semantic score > 0.75. High-level semantic match but no lexical overlap → novel.
+  [CONFIDENCE]: High (semantic gap override)
+============================================================
+
+──────────────────────────────────────────────────────────────────────
+  Case D — CNN with attention (EXPECT: INCREMENTAL — known field, marginal improvement)
+──────────────────────────────────────────────────────────────────────
+
+======================================================================
+NOVELTY PREDICTION — Hybrid TF-IDF + MPNet System v16
+======================================================================
+
+[Query]: A convolutional neural network system incorporating multi-head self-attention
+        layers between convolutional blocks for image classification. Th...
+
+[Scores]:
+   Max Calibrated:            0.8160  (81.6%)
+   Effective Cal (dampened):  0.8160  (no dampening)
+   Top-3 Avg Calibrated:      0.8051  (80.5%)
+   Top-5 Avg Calibrated:      0.7974  (79.7%)
+   Top-result TF-IDF:         0.1970
+   Top-result Semantic:       0.7082
+   TF/Sem Ratio:              0.2782  (incr ratio heuristic if >= 0.58)
+   Semantic Gap (Sem - TF):   0.5112  (gap override if > 0.55 & sem > 0.75)
+   Median top-5 TF-IDF:       0.1507
+   Max TF-IDF (all results):  0.1970
+   Max Hybrid (all results):  0.5128
+   TF-IDF rank decay ratio:   0.6423  (rank3=0.1265 / rank1=0.1970)
+   Modern terms detected:     0
+
+[Decision Rules — v16]:
+   Step 0  — Dampening:         ○ skip  [max_tfidf=0.197 < 0.15]
+   Step 1  — ModernTerms:       ○ skip  [0 >= 2 & max_tfidf=0.197 < 0.35]
+   Step 2  — SemanticGap:       ○ skip  [gap=0.511 > 0.55 & tfidf=0.197 < 0.32 & sem=0.708 > 0.75]
+   Step 3  — StrongDrift:       ○ skip  [sem=0.708 > 0.8 & max_tfidf=0.197 < 0.28]
+   Step 4  — RankDecay:         ○ skip  [ratio=0.642 < 0.5 & sem=0.708 > 0.8 & max_tfidf < 0.28]
+   Rule 1  — Drift Safeguard:   ○ skip  [top_tfidf=0.197 < 0.2 & sem=0.708 > 0.72]
+   Rule 2  — Domain Coherence:  ○ skip  [median=0.151 < 0.15 & eff_cal=0.816 >= 0.4 & sem=0.708 < 0.6]
+   Rule 3  — TF-IDF Override:   ○ skip  [max_tfidf=0.197 < 0.15 & hybrid=0.513 < 0.55]
+   Rule 4  — Out-of-domain:     ○ skip  [eff_cal=0.816 < 0.4]
+   Step 9  — Incremental(zone): ○ skip  [eff_cal=0.816 in [0.451,0.470) ← ✓ | tfidf=0.197 in [0.178,0.276] | gap=0.511 < 0.600 | top3=0.805 >= 0.451]
+   Step 9b — Incremental(ratio):○ skip  [ratio=0.278 >= 0.58 & decay=0.642 <= 0.9 & tfidf=0.197 >= 0.4 & sem=0.708 in [0.75,0.88]]
+   Rule 5  — Dual Rejection:    ⚡ NOT NOVEL  [eff_cal=0.816 >= 0.470 AND top3=0.805 >= 0.470]
+
+[System Config — v16]:
+   Model        : sentence-transformers/all-mpnet-base-v2  ✓ MPNet
+   Threshold    : 0.470
+   Novelty floor: 0.400
+   Weights      : TF-IDF=0.382, Semantic=0.618
+   Inference    : 0.415s
+   Reason       : Strong prior art match found — calibrated score above rejection threshold
+   Confidence   : High
+
+============================================================
+MOST SIMILAR PATENT
+============================================================
+  ID        : 5781701
+  Title     : Neural network and method of using same...
+  TF-IDF    : 0.1970
+  Semantic  : 0.7082
+  Gap       : 0.5112
+  Hybrid    : 0.5128
+  Calibrated: 0.8160
+
+============================================================
+TOP 10 SIMILAR PATENTS
+============================================================
+
+ 1. 5781701  Neural network and method of using same...
+    TF=0.1970 | Sem=0.7082 | Hybrid=0.5128 | Cal=0.8160
+
+ 2. 11074714  Eye tracking method and system...
+    TF=0.1615 | Sem=0.7029 | Hybrid=0.4960 | Cal=0.8039
+
+ 3. 9712146  Mixed signal processors...
+    TF=0.1265 | Sem=0.7061 ⚠ gap=0.580 | Hybrid=0.4846 | Cal=0.7954
+
+ 4. 5748792  Large kernel filtering using a fixed-size block processor...
+    TF=0.1432 | Sem=0.6930 | Hybrid=0.4829 | Cal=0.7940
+
+ 5. 11169514  Unsupervised anomaly detection, diagnosis, and correction in...
+    TF=0.1507 | Sem=0.6544 | Hybrid=0.4619 | Cal=0.7776
+
+ 6. 5644681  Learning method for neural network having discrete interconn...
+    TF=0.1409 | Sem=0.6574 | Hybrid=0.4600 | Cal=0.7760
+
+ 7. 8290051  Adaptive weighting of reference pictures in video encoding...
+    TF=0.1217 | Sem=0.6413 | Hybrid=0.4427 | Cal=0.7617
+
+ 8. 9666184  Method and apparatus for training language model and recogni...
+    TF=0.1188 | Sem=0.6384 | Hybrid=0.4357 | Cal=0.7558
+
+ 9. 10860766  Compilation flow for a heterogeneous multi-core architecture...
+    TF=0.1180 | Sem=0.6317 | Hybrid=0.4290 | Cal=0.7499
+
+10. 8572184  Systems and methods for dynamically integrating heterogeneou...
+    TF=0.1179 | Sem=0.6214 | Hybrid=0.4223 | Cal=0.7440
+
+============================================================
+  [DECISION]:   [NOT NOVEL] Prior Art Detected
+  [REASON]:     Strong prior art match found — calibrated score above rejection threshold
+  [CONFIDENCE]: High
+============================================================
+
+======================================================================
+FINAL SUMMARY — Hybrid Patent Novelty Detection System v16
+======================================================================
+  Semantic model   : sentence-transformers/all-mpnet-base-v2  ✓
+  Embedding dim    : 768
+  Similarity       : dot product (L2-normalised = cosine)
+  Threshold        : 0.470
+  Novelty floor    : 0.400
+  Fusion weights   : TF-IDF=0.382, Semantic=0.618
+  Calibrator fitted: True
+
+  Three-way Decision Output [v16]:
+    [NOVEL]       → Potentially Novel (clear novelty)
+    [INCREMENTAL] → Incremental Innovation (improvement patent)
+    [NOT NOVEL]   → Prior Art Detected
+
+  Decision Hierarchy [v16]:
+    Step 0   Dampen:            max_tfidf<0.15 → cal×0.6
+    Step 1   ModernTerms:       2+ post-2022 terms & max_tfidf<0.35 → NOVEL
+    Step 2   SemanticGap:       gap>0.55 & tfidf<0.32 & sem>0.75 → NOVEL
+    Step 3   StrongDrift:       sem>0.8 & max_tfidf<0.28 → NOVEL
+    Step 4   RankDecay:         ratio<0.5 & sem>0.8 → NOVEL
+    Rule 1   Drift:             top_tfidf<0.2 & sem>0.72 → NOVEL
+    Rule 2   Coherence:         median_top5<0.15 & sem<0.6 → NOVEL
+    Rule 3   TFIDFOverride:     max_tfidf<0.15 & hybrid<0.55 → NOVEL
+    Rule 4   Floor:             eff_cal<0.400 → NOVEL
+    Step 9   Incremental(zone): eff_cal in [0.451,0.470) ← ✓
+                               & tfidf in [0.178,0.276]
+                               & gap < 0.600 & top3 >= 0.451 → INCREMENTAL
+    Step 9b  Incremental(ratio):ratio>=0.58 & decay<=0.9
+                               & tfidf>=0.4 & sem in [0.75,0.88] → INCREMENTAL  ← v16 NEW
+    Rule 5   Reject:            eff_cal>=0.470 AND top3>=0.470 → NOT NOVEL
+
+  Test Metrics (INCREMENTAL counted as NOVEL for binary metrics):
+    Accuracy    : 0.843  (84.2%)
+    Bal. Acc.   : 0.843
+    Precision   : 0.966
+    Recall      : 0.710
+    F1          : 0.818
+    AUC-ROC     : 0.912
+    Recall@10    : 0.395  (39.5%)
+    Recall@20    : 0.435  (43.5%)
+    Recall@50    : 0.510  (51.0%)
+    Recall@100   : 0.560  (56.0%)
+
+  Sample Decisions:
+    ✓ A — Deep RL + CNN (EXPECT: NOT NOVEL)... → [NOT NOVEL] Prior Art Detected
+    ✓ B — RLHF / LLM alignment (EXPECT: NOVEL — post-2022 technolo... → [NOVEL] Potentially Novel
+    ✓ C — Bicycle combination lock (EXPECT: NOVEL — unrelated doma... → [NOVEL] Potentially Novel
+    ✗ D — CNN with attention (EXPECT: INCREMENTAL — known field, m... → [NOT NOVEL] Prior Art Detected
+
+  All cases correct: ✗ NO — check above
+
+  v16 fix vs v15:
+    FIX-V16-1: Step 9b — Score-Ratio Incremental Heuristic (NEW)
+      Fires when tfidf/semantic ratio >= 0.58
+        AND tfidf_rank_decay_ratio    <= 0.9
+        AND top_tfidf                 >= 0.4
+        AND top_semantic          in [0.75, 0.88]
+      Catches incremental patents whose scores exceed the percentile zone
+      (common on demo/compressed-score datasets) but whose TF/semantic
+      fingerprint reveals niche improvement, not broad prior art.
+    FIX-V16-2: Cache version bumped to v16 — v15 caches auto-recompute
+
+  System ready.

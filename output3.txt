@@ -1,0 +1,481 @@
+======================================================================
+PATENT NOVELTY CHECK SYSTEM — CORRECTED VERSION v9
+======================================================================
+
+Author    : Devika Bakshi (122CS0301)
+Supervisor: Asst. Prof. Sumanta Pyne
+Institute : NIT Rourkela
+Start     : 2026-05-04 15:58:27
+
+[USE_PATENT_BERT = True]
+  → Loading anferico/bert-for-patents (domain-adapted)
+
+──────────────────────────────────────────────────────────────────────
+SETUP NOTES
+──────────────────────────────────────────────────────────────────────
+Patent-BERT mode requires:
+  pip install sentence-transformers protobuf sentencepiece
+After switching USE_PATENT_BERT, cache is auto-invalidated.
+──────────────────────────────────────────────────────────────────────
+
+[Device]: cuda
+   GPU: NVIDIA GeForce RTX 3060 Laptop GPU
+
+[Mode]: Patent-BERT
+======================================================================
+BUILDING CITATION-AWARE DATASET
+======================================================================
+
+[1/5] Analyzing citation graph...
+Columns: citing='patent_id', cited='citation_patent_id'
+Core patents: 5,237,624
+Sampled 10,000
+
+[2/5] Loading patent data...
+Loaded 10,000
+
+[3/5] Loading abstracts...
+Patent count: 8,719
+
+[4/5] Preprocessing...
+After filter: 8,719
+
+[5/5] Extracting citation pairs...
+Citation pairs: 284
+   [WARNING] Low citation density (0.000374%) — threshold adj applied
+Positive pairs: 284
+
+[INFO] Dataset / model changed — recomputing all embeddings
+   Hash: 4df19e87 → 06ef7f6d
+
+======================================================================
+COMPUTING EMBEDDINGS
+======================================================================
+
+[1/2] TF-IDF (trigrams, 15k features)...
+   Dense TF-IDF cached: (8719, 15000)
+
+[2/2] BERT embeddings...
+
+   Trying: anferico/bert-for-patents (method=hf_bert)
+   ✗ anferico/bert-for-patents — ValueError: Couldn't instantiate the backend tokenizer from one of: 
+(1) a `tokenizers` library serialization file, 
+(2) a slow toke
+
+   Trying: AI-Growth-Lab/PatentBERT (method=hf_bert)
+   ✗ AI-Growth-Lab/PatentBERT — OSError: AI-Growth-Lab/PatentBERT is not a local folder and is not a valid model identifier listed on 'https://huggingface.co/mod
+
+   Trying: BAAI/bge-base-en-v1.5 (method=sbert)
+   Smoke test embedding norm: 1.0000
+   ⚠ General-purpose model loaded: BAAI/bge-base-en-v1.5
+   NOTE: v9 drift safeguards (general mode) active.
+   TIP:  pip install protobuf sentencepiece  → re-run for patent BERT
+   Embedding norms — mean: 1.0000  std: 0.0000  (should be ~1.000 ± 0.001)
+
+Embeddings done!
+
+======================================================================
+TRAINING HYBRID MODEL  [PATENT mode]
+======================================================================
+
+   Train+: 199 | Val+: 85
+
+[1/4] Training positives...
+   Valid: 199
+
+[2/4] Mining negatives...
+
+   Mining medium-hard negatives (10th–40th pct TF-IDF)...
+   Mined 129 medium-hard negatives
+
+   Total: 398  (pos=199, neg=199)
+
+[3/4] Learning fusion weights...
+   Mode:    patent
+   Weights: TF-IDF=0.539, BERT=0.461
+   (Patent-BERT mode allows BERT weight up to 0.75)
+   Score sep (fused): pos=0.395 neg=0.089 gap=0.306
+
+[4/4] Validation + calibration + threshold...
+
+   Mining medium-hard negatives (10th–40th pct TF-IDF)...
+   Mined 55 medium-hard negatives
+
+   Val: 170 (pos=85, neg=85)
+   Calibrator fitted: True
+   Calibrated range: [0.233, 0.964]
+     Pos mean: 0.682
+     Neg mean: 0.318
+
+   Optimizing threshold (BAC)...
+   Learned=0.445  Applied=0.500 (floor=0.50)
+   Acc=0.900  Prec=1.000  Rec=0.800  F1=0.889  BAC=0.900
+   AUC=0.930
+
+   [Sparsity adj] 0.500 → 0.480 (floor=0.48)
+
+======================================================================
+HELD-OUT TEST SET
+======================================================================
+
+   Mining medium-hard negatives (10th–40th pct TF-IDF)...
+   Mined 130 medium-hard negatives
+Test: 400 (pos=200, neg=200)
+
+======================================================================
+MODEL EVALUATION  [PATENT mode]
+======================================================================
+
+   Eval: 400 (pos=200, neg=200)
+   Model: BAAI/bge-base-en-v1.5  ⚠ General-purpose
+
+   RAW Hybrid:
+     Pos: 0.393 ± 0.187
+     Neg: 0.093 ± 0.065
+     Sep: 0.300
+
+   CALIBRATED:
+     Pos: 0.689 ± 0.202
+     Neg: 0.339 ± 0.078
+     Sep: 0.351
+
+[Classification] (threshold=0.480):
+   Accuracy:   0.885  (88.5%)
+   Bal Acc:    0.885
+   Precision:  0.958
+   Recall:     0.805
+   F1:         0.875
+   AUC-ROC:    0.892
+   Avg Prec:   0.931
+
+[Retrieval] (200 positives):
+   Recall@10  : 0.425  (42.5%)
+   Recall@20  : 0.505  (50.5%)
+   Recall@50  : 0.585  (58.5%)
+   Recall@100 : 0.630  (63.0%)
+
+======================================================================
+SAMPLE NOVELTY PREDICTIONS — v9 [PATENT MODE]
+======================================================================
+
+──────────────────────────────────────────────────────────────────────
+  Case A — Deep RL + CNN (EXPECT: REJECT)
+──────────────────────────────────────────────────────────────────────
+
+======================================================================
+NOVELTY PREDICTION  [PATENT mode]
+======================================================================
+
+[Query]: A neural network processing system and method for real-time pattern recognition
+        using deep reinforcement learning and convolutional neural net...
+
+[Scores]:
+   Max Calibrated:           0.9227  (92.3%)
+   Top-3 Avg Calibrated:     0.8966  (89.7%)
+   Top-5 Avg Calibrated:     0.8834  (88.3%)
+   Top-result TF-IDF:        0.5263  (drift if < 0.12)
+   Top-result BERT:          0.8555  (drift if > 0.85 with low TF-IDF)
+   Median top-5 TF-IDF:      0.3389  (coherence floor: 0.08)
+   Max TF-IDF (all results): 0.5263
+   Max Hybrid (all results): 0.6779
+
+[Decision Rules — v9 patent mode]:
+   Rule 1 — Drift Safeguard:  ○ skip  [top_tfidf=0.526<0.12 & top_bert=0.856>0.85]
+   Rule 2 — Domain Coherence: ○ skip  [median_top5=0.339<0.08 & max_cal=0.923>=0.400]
+   Rule 3 — TF-IDF Override:  ○ skip  [max_tfidf=0.526<0.1 & hybrid=0.678<0.45]
+   Rule 4 — Out-of-domain:    ○ skip  [max_cal=0.923<floor=0.400]
+   Rule 5 — Dual Rejection:   ⚡ WOULD REJECT  [cond1=True: 0.923>=0.480, cond2=True: 0.897>=0.380]
+
+[Config — v9 patent mode]:
+   USE_PATENT_BERT : True
+   Threshold       : 0.480
+   Novelty floor   : 0.400
+   Drift guard     : top_tfidf<0.12 & top_bert>0.85
+   Coherence guard : median_top5_tfidf<0.08
+   TF-IDF override : max_tfidf<0.1 & hybrid<0.45
+   Model           : BAAI/bge-base-en-v1.5 ⚠ [general]
+   Weights         : TF-IDF=0.539, BERT=0.461
+   Inference       : 0.433s
+   Reason          : Strong prior art match found
+   Confidence      : High
+
+============================================================
+MOST SIMILAR PATENT
+============================================================
+  ID        : 10540589
+  Title     : Image quality assessment using similar scenes as reference...
+  TF-IDF    : 0.5263  
+  BERT      : 0.8555  
+  Hybrid    : 0.6779
+  Calibrated: 0.9227
+
+============================================================
+TOP 10 SIMILAR PATENTS
+============================================================
+
+ 1. 10540589  Image quality assessment using similar scenes as reference...
+    TF=0.5263 | BERT=0.8555 | Hybrid=0.6779 | Cal=0.9227
+
+ 2. 11710033  Unsupervised machine learning system to automate functions o...
+    TF=0.4268 | BERT=0.8380 | Hybrid=0.6162 | Cal=0.8953
+
+ 3. 11651229  Methods and systems for face recognition...
+    TF=0.3128 | BERT=0.8798 | Hybrid=0.5739 | Cal=0.8718
+
+ 4. 5285523  Apparatus for recognizing driving environment of vehicle...
+    TF=0.3389 | BERT=0.8263 | Hybrid=0.5634 | Cal=0.8653
+
+ 5. 10993647  Drowsiness detection for vehicle control...
+    TF=0.3260 | BERT=0.8298 | Hybrid=0.5580 | Cal=0.8619
+
+ 6. 11435813  Neural network power management in a multi-GPU system...
+    TF=0.2866 | BERT=0.8553 | Hybrid=0.5485 | Cal=0.8556
+
+ 7. 9263060  Artificial neural network based system for classification of...
+    TF=0.2895 | BERT=0.8277 | Hybrid=0.5373 | Cal=0.8480
+
+ 8. 10599807  Automatic generation of via patterns with coordinate-based r...
+    TF=0.2483 | BERT=0.8630 | Hybrid=0.5314 | Cal=0.8438
+
+ 9. 5150449  Speech recognition apparatus of speaker adaptation type...
+    TF=0.2528 | BERT=0.8194 | Hybrid=0.5137 | Cal=0.8308
+
+10. 5774631  3-D reconstruction of objects by artificial intelligence: ap...
+    TF=0.2282 | BERT=0.8390 | Hybrid=0.5095 | Cal=0.8276
+
+============================================================
+  [DECISION]:   [REJECT] Not Novel — Prior Art Detected
+  [REASON]:     Strong prior art match found
+  [CONFIDENCE]: High
+============================================================
+
+──────────────────────────────────────────────────────────────────────
+  Case B — RLHF / LLM alignment (EXPECT: ACCEPT — post-2022 technology)
+──────────────────────────────────────────────────────────────────────
+
+======================================================================
+NOVELTY PREDICTION  [PATENT mode]
+======================================================================
+
+[Query]: A method for aligning large language models using reinforcement learning from
+        human feedback (RLHF), comprising: a reward model fine-tuned on ...
+
+[Scores]:
+   Max Calibrated:           0.8018  (80.2%)
+   Top-3 Avg Calibrated:     0.7866  (78.7%)
+   Top-5 Avg Calibrated:     0.7791  (77.9%)
+   Top-result TF-IDF:        0.1780  (drift if < 0.12)
+   Top-result BERT:          0.8293  (drift if > 0.85 with low TF-IDF)
+   Median top-5 TF-IDF:      0.1460  (coherence floor: 0.08)
+   Max TF-IDF (all results): 0.1780
+   Max Hybrid (all results): 0.4780
+
+[Decision Rules — v9 patent mode]:
+   Rule 1 — Drift Safeguard:  ○ skip  [top_tfidf=0.178<0.12 & top_bert=0.829>0.85]
+   Rule 2 — Domain Coherence: ○ skip  [median_top5=0.146<0.08 & max_cal=0.802>=0.400]
+   Rule 3 — TF-IDF Override:  ○ skip  [max_tfidf=0.178<0.1 & hybrid=0.478<0.45]
+   Rule 4 — Out-of-domain:    ○ skip  [max_cal=0.802<floor=0.400]
+   Rule 5 — Dual Rejection:   ⚡ WOULD REJECT  [cond1=True: 0.802>=0.480, cond2=True: 0.787>=0.380]
+
+[Config — v9 patent mode]:
+   USE_PATENT_BERT : True
+   Threshold       : 0.480
+   Novelty floor   : 0.400
+   Drift guard     : top_tfidf<0.12 & top_bert>0.85
+   Coherence guard : median_top5_tfidf<0.08
+   TF-IDF override : max_tfidf<0.1 & hybrid<0.45
+   Model           : BAAI/bge-base-en-v1.5 ⚠ [general]
+   Weights         : TF-IDF=0.539, BERT=0.461
+   Inference       : 0.394s
+   Reason          : Strong prior art match found
+   Confidence      : High
+
+============================================================
+MOST SIMILAR PATENT
+============================================================
+  ID        : 7302640
+  Title     : Language input architecture for converting one text form to another text form wi...
+  TF-IDF    : 0.1780  
+  BERT      : 0.8293  
+  Hybrid    : 0.4780
+  Calibrated: 0.8018
+
+============================================================
+TOP 10 SIMILAR PATENTS
+============================================================
+
+ 1. 7302640  Language input architecture for converting one text form to ...
+    TF=0.1780 | BERT=0.8293 | Hybrid=0.4780 | Cal=0.8018
+
+ 2. 8706655  Machine learned classifiers for rating the content quality i...
+    TF=0.1460 | BERT=0.8214 | Hybrid=0.4571 | Cal=0.7832
+
+ 3. 8756171  Generating predictions from a probabilistic process model...
+    TF=0.1507 | BERT=0.7962 | Hybrid=0.4480 | Cal=0.7748
+
+ 4. 8548807  System and method for adapting automatic speech recognition ...
+    TF=0.1216 | BERT=0.8178 | Hybrid=0.4422 | Cal=0.7693
+
+ 5. 11301759  Detective method and system for activity-or-behavior model c...
+    TF=0.1431 | BERT=0.7866 | Hybrid=0.4394 | Cal=0.7666
+
+ 6. 11503061  Automatic evalution of remediation plans using exploitabilit...
+    TF=0.1307 | BERT=0.7955 | Hybrid=0.4369 | Cal=0.7641
+
+ 7. 7424423  Method and apparatus for formant tracking using a residual m...
+    TF=0.1031 | BERT=0.8240 | Hybrid=0.4351 | Cal=0.7623
+
+ 8. 9141622  Feature weight training techniques...
+    TF=0.1174 | BERT=0.8065 | Hybrid=0.4347 | Cal=0.7620
+
+ 9. 9928342  System, medical item including RFID chip, server and method ...
+    TF=0.1601 | BERT=0.7552 | Hybrid=0.4342 | Cal=0.7615
+
+10. 9231974  Dynamic policy-based entitlements from external data reposit...
+    TF=0.1233 | BERT=0.7950 | Hybrid=0.4326 | Cal=0.7599
+
+============================================================
+  [DECISION]:   [REJECT] Not Novel — Prior Art Detected
+  [REASON]:     Strong prior art match found
+  [CONFIDENCE]: High
+============================================================
+
+──────────────────────────────────────────────────────────────────────
+  Case C — Bicycle combination lock (EXPECT: ACCEPT — unrelated domain)
+──────────────────────────────────────────────────────────────────────
+
+======================================================================
+NOVELTY PREDICTION  [PATENT mode]
+======================================================================
+
+[Query]: A portable bicycle security device comprising a hardened steel shackle
+        and a four-digit numeric combination dial mechanism. The user selects a...
+
+[Scores]:
+   Max Calibrated:           0.7979  (79.8%)
+   Top-3 Avg Calibrated:     0.7902  (79.0%)
+   Top-5 Avg Calibrated:     0.7825  (78.3%)
+   Top-result TF-IDF:        0.1361  (drift if < 0.12)
+   Top-result BERT:          0.8687  (drift if > 0.85 with low TF-IDF)
+   Median top-5 TF-IDF:      0.1152  (coherence floor: 0.08)
+   Max TF-IDF (all results): 0.1361
+   Max Hybrid (all results): 0.4735
+
+[Decision Rules — v9 patent mode]:
+   Rule 1 — Drift Safeguard:  ○ skip  [top_tfidf=0.136<0.12 & top_bert=0.869>0.85]
+   Rule 2 — Domain Coherence: ○ skip  [median_top5=0.115<0.08 & max_cal=0.798>=0.400]
+   Rule 3 — TF-IDF Override:  ○ skip  [max_tfidf=0.136<0.1 & hybrid=0.473<0.45]
+   Rule 4 — Out-of-domain:    ○ skip  [max_cal=0.798<floor=0.400]
+   Rule 5 — Dual Rejection:   ⚡ WOULD REJECT  [cond1=True: 0.798>=0.480, cond2=True: 0.790>=0.380]
+
+[Config — v9 patent mode]:
+   USE_PATENT_BERT : True
+   Threshold       : 0.480
+   Novelty floor   : 0.400
+   Drift guard     : top_tfidf<0.12 & top_bert>0.85
+   Coherence guard : median_top5_tfidf<0.08
+   TF-IDF override : max_tfidf<0.1 & hybrid<0.45
+   Model           : BAAI/bge-base-en-v1.5 ⚠ [general]
+   Weights         : TF-IDF=0.539, BERT=0.461
+   Inference       : 0.473s
+   Reason          : Strong prior art match found
+   Confidence      : High
+
+============================================================
+MOST SIMILAR PATENT
+============================================================
+  ID        : 7492265
+  Title     : Bottle security device...
+  TF-IDF    : 0.1361  
+  BERT      : 0.8687  
+  Hybrid    : 0.4735
+  Calibrated: 0.7979
+
+============================================================
+TOP 10 SIMILAR PATENTS
+============================================================
+
+ 1. 7492265  Bottle security device...
+    TF=0.1361 | BERT=0.8687 | Hybrid=0.4735 | Cal=0.7979
+
+ 2. 4519229  Combination lock...
+    TF=0.1152 | BERT=0.8832 ⚠ | Hybrid=0.4689 | Cal=0.7939
+
+ 3. 7581099  Secure object for convenient identification...
+    TF=0.1244 | BERT=0.8367 | Hybrid=0.4524 | Cal=0.7789
+
+ 4. 5884508  Security adapter...
+    TF=0.1119 | BERT=0.8333 | Hybrid=0.4441 | Cal=0.7711
+
+ 5. 8701452  Computer security device...
+    TF=0.0849 | BERT=0.8643 ⚠ | Hybrid=0.4438 | Cal=0.7708
+
+ 6. 5724705  Door security apparatus...
+    TF=0.0911 | BERT=0.8412 | Hybrid=0.4365 | Cal=0.7638
+
+ 7. 3935996  Counter mechanism for continuous measurements, particularly ...
+    TF=0.0918 | BERT=0.8391 | Hybrid=0.4359 | Cal=0.7632
+
+ 8. 6674372  Chinese character input method using numeric keys and appara...
+    TF=0.1213 | BERT=0.8015 | Hybrid=0.4345 | Cal=0.7618
+
+ 9. 7061228  Apparatus for detecting rotation of a bicycle part...
+    TF=0.0806 | BERT=0.8483 | Hybrid=0.4341 | Cal=0.7614
+
+10. 10672571  Dial wheel mechanism and control device...
+    TF=0.0857 | BERT=0.8312 | Hybrid=0.4290 | Cal=0.7564
+
+============================================================
+  [DECISION]:   [REJECT] Not Novel — Prior Art Detected
+  [REASON]:     Strong prior art match found
+  [CONFIDENCE]: High
+============================================================
+
+======================================================================
+FINAL SUMMARY — v9  [PATENT MODE]
+======================================================================
+  USE_PATENT_BERT   : True
+  BERT Model        : BAAI/bge-base-en-v1.5
+  ⚠  General-purpose model — v9 drift safeguards (general mode)
+     → pip install protobuf sentencepiece  to enable patent BERT
+  Threshold         : 0.480
+  Novelty floor     : 0.400
+
+  v9 Decision Rules [patent mode]:
+    Rule 1 Drift:     top_tfidf<0.12 & top_bert>0.85 → ACCEPT
+    Rule 2 Coherence: median_top5_tfidf<0.08 → ACCEPT
+    Rule 3 Override:  max_tfidf<0.1 & hybrid<0.45 → ACCEPT
+    Rule 4 Floor:     max_cal<0.400 → ACCEPT
+    Rule 5 Reject:    max_cal>=0.480 & top3>=0.380 → REJECT
+  Fusion weights    : TF-IDF=0.539, BERT=0.461
+  Calibrator fitted : True
+
+  Test Results:
+    Accuracy    : 0.885
+    Bal. Acc.   : 0.885
+    Precision   : 0.958
+    Recall      : 0.805
+    F1          : 0.875
+    AUC-ROC     : 0.892
+    Recall@10    : 0.425  (42.5%)
+    Recall@20    : 0.505  (50.5%)
+    Recall@50    : 0.585  (58.5%)
+    Recall@100   : 0.630  (63.0%)
+
+  Sample Decisions:
+    ✓ A — Deep RL + CNN (EXPECT: REJECT)... → [REJECT] Not Novel — Prior Art Detected
+    ✗ B — RLHF / LLM alignment (EXPECT: ACCEPT — post-2022 te... → [REJECT] Not Novel — Prior Art Detected
+    ✗ C — Bicycle combination lock (EXPECT: ACCEPT — unrelate... → [REJECT] Not Novel — Prior Art Detected
+
+  v9 KEY ADDITIONS vs v8:
+    FIX-V9-1: USE_PATENT_BERT flag — single switch for dual-mode
+    FIX-V9-2: PatentBERTWrapper always L2-normalises embeddings
+    FIX-V9-3: _encode_text() re-normalises as hard safety guarantee
+    FIX-V9-4: Mode-aware thresholds (patent vs general sets)
+    FIX-V9-5: Cache versioning — model name stored + verified on load
+    FIX-V9-6: Cache hash includes model name → auto-invalidated on switch
+    FIX-V9-7: Fusion weight bounds widen in patent-BERT mode
+    FIX-V9-8: Sparsity floor 0.45 → 0.48 in patent-BERT mode
+    FIX-V9-9: Embedding norm verification printed after compute
+
+  System ready.

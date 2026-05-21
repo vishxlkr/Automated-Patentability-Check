@@ -1,0 +1,489 @@
+2026-05-01 13:32:20,926 - INFO - No device provided, using cuda:0
+2026-05-01 13:32:22,864 - INFO - HTTP Request: HEAD https://huggingface.co/anferico/bert-for-patents/resolve/main/modules.json "HTTP/1.1 404 Not Found"
+2026-05-01 13:32:22,874 - INFO - No modules.json found for anferico/bert-for-patents, initializing a new SentenceTransformer model.
+2026-05-01 13:32:23,243 - INFO - HTTP Request: HEAD https://huggingface.co/anferico/bert-for-patents/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-05-01 13:32:23,773 - INFO - HTTP Request: HEAD https://huggingface.co/anferico/bert-for-patents/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-01 13:32:24,085 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/anferico/bert-for-patents/148e559789f59c2660cb7e7aaa0812041660c607/config.json "HTTP/1.1 200 OK"
+2026-05-01 13:32:24,413 - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/anferico/bert-for-patents/148e559789f59c2660cb7e7aaa0812041660c607/config.json "HTTP/1.1 200 OK"
+2026-05-01 13:32:24,449 - INFO - No device provided, using cuda:0
+2026-05-01 13:32:24,803 - INFO - HTTP Request: HEAD https://huggingface.co/AI-Growth-Lab/PatentBERT/resolve/main/modules.json "HTTP/1.1 401 Unauthorized"
+2026-05-01 13:32:24,804 - INFO - No modules.json found for AI-Growth-Lab/PatentBERT, initializing a new SentenceTransformer model.
+2026-05-01 13:32:25,123 - INFO - HTTP Request: HEAD https://huggingface.co/AI-Growth-Lab/PatentBERT/resolve/main/adapter_config.json "HTTP/1.1 401 Unauthorized"
+2026-05-01 13:32:25,126 - INFO - No device provided, using cuda:0
+2026-05-01 13:32:25,654 - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-base-en-v1.5/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-01 13:32:26,013 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-base-en-v1.5/a5beb1e3e68b9ab74eb54cfd186867f64f240e1a/modules.json "HTTP/1.1 200 OK"
+2026-05-01 13:32:26,173 - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/BAAI/bge-base-en-v1.5/a5beb1e3e68b9ab74eb54cfd186867f64f240e1a/modules.json "HTTP/1.1 200 OK"
+2026-05-01 13:32:26,533 - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-base-en-v1.5/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-05-01 13:32:26,534 - WARNING - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-05-01 13:32:26,656 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-base-en-v1.5/a5beb1e3e68b9ab74eb54cfd186867f64f240e1a/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-05-01 13:32:26,793 - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/BAAI/bge-base-en-v1.5/a5beb1e3e68b9ab74eb54cfd186867f64f240e1a/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-05-01 13:32:26,810 - INFO - Loading SentenceTransformer model from BAAI/bge-base-en-v1.5.
+2026-05-01 13:32:27,263 - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-base-en-v1.5/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-01 13:32:27,324 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-base-en-v1.5/a5beb1e3e68b9ab74eb54cfd186867f64f240e1a/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-05-01 13:32:27,693 - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-base-en-v1.5/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-05-01 13:32:27,783 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-base-en-v1.5/a5beb1e3e68b9ab74eb54cfd186867f64f240e1a/README.md "HTTP/1.1 200 OK"
+2026-05-01 13:32:27,843 - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/BAAI/bge-base-en-v1.5/a5beb1e3e68b9ab74eb54cfd186867f64f240e1a/README.md "HTTP/1.1 200 OK"
+2026-05-01 13:32:28,514 - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-base-en-v1.5/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-01 13:32:28,623 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-base-en-v1.5/a5beb1e3e68b9ab74eb54cfd186867f64f240e1a/modules.json "HTTP/1.1 200 OK"
+2026-05-01 13:32:28,933 - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-base-en-v1.5/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-01 13:32:28,983 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-base-en-v1.5/a5beb1e3e68b9ab74eb54cfd186867f64f240e1a/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-05-01 13:32:29,143 - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/BAAI/bge-base-en-v1.5/a5beb1e3e68b9ab74eb54cfd186867f64f240e1a/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-05-01 13:32:29,463 - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-base-en-v1.5/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-05-01 13:32:29,773 - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-base-en-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-01 13:32:29,833 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-base-en-v1.5/a5beb1e3e68b9ab74eb54cfd186867f64f240e1a/config.json "HTTP/1.1 200 OK"
+2026-05-01 13:32:29,903 - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/BAAI/bge-base-en-v1.5/a5beb1e3e68b9ab74eb54cfd186867f64f240e1a/config.json "HTTP/1.1 200 OK"
+2026-05-01 13:32:30,393 - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-base-en-v1.5/resolve/main/model.safetensors "HTTP/1.1 302 Found"
+2026-05-01 13:32:30,963 - INFO - HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-base-en-v1.5/xet-read-token/a5beb1e3e68b9ab74eb54cfd186867f64f240e1a "HTTP/1.1 200 OK"
+======================================================================
+PATENT NOVELTY CHECK SYSTEM — CORRECTED VERSION v5
+======================================================================
+
+Author    : Devika Bakshi (122CS0301)
+Supervisor: Asst. Prof. Sumanta Pyne
+Institute : NIT Rourkela
+Start     : 2026-05-01 13:19:15
+
+[Device]: cuda
+   GPU: NVIDIA GeForce RTX 3060 Laptop GPU
+======================================================================
+BUILDING CITATION-AWARE DATASET
+======================================================================
+
+[1/5] Analyzing citation graph...
+Using columns: citing='patent_id', cited='citation_patent_id'
+Found 5,237,624 core patents
+Randomly sampled 10,000 core patents
+
+[2/5] Loading patent data...
+Loaded 10,000 patents
+
+[3/5] Loading abstract data...
+Final patent count: 8,660
+
+[4/5] Preprocessing patent texts...
+After quality filter: 8,660 patents
+
+[5/5] Extracting citation pairs...
+Raw citation pairs: 283
+
+   [WARNING] Citation density is very low (0.000377%). Threshold will be adjusted downward.
+Created 283 positive pairs
+
+[INFO] Dataset changed — recomputing embeddings
+   Hash: a8d1720a -> 5d2772d8
+
+======================================================================
+COMPUTING EMBEDDINGS
+======================================================================
+
+[1/2] Computing TF-IDF vectors...
+   TF-IDF dense matrix cached: (8660, 15000)
+
+[2/2] Computing Patent-BERT embeddings (FIX-R1)...
+
+   Trying model: anferico/bert-for-patents
+   Failed (ValueError): anferico/bert-for-patents
+
+   Trying model: AI-Growth-Lab/PatentBERT
+   Failed (OSError): AI-Growth-Lab/PatentBERT
+
+   Trying model: BAAI/bge-base-en-v1.5
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|##########| 199/199 [00:00<00:00, 3837.05it/s]
+[1mBertModel LOAD REPORT[0m from: BAAI/bge-base-en-v1.5
+Key                     | Status     |  | 
+------------------------+------------+--+-
+embeddings.position_ids | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+2026-05-01 13:32:43,444 - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-base-en-v1.5/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-05-01 13:32:43,744 - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-base-en-v1.5/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-05-01 13:32:44,073 - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-base-en-v1.5/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-05-01 13:32:44,483 - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-base-en-v1.5/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-05-01 13:32:45,103 - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-base-en-v1.5/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-01 13:32:45,184 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-base-en-v1.5/a5beb1e3e68b9ab74eb54cfd186867f64f240e1a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-05-01 13:32:45,246 - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/BAAI/bge-base-en-v1.5/a5beb1e3e68b9ab74eb54cfd186867f64f240e1a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-05-01 13:32:45,573 - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-base-en-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-01 13:32:45,623 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-base-en-v1.5/a5beb1e3e68b9ab74eb54cfd186867f64f240e1a/config.json "HTTP/1.1 200 OK"
+2026-05-01 13:32:45,923 - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-base-en-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-01 13:32:45,973 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-base-en-v1.5/a5beb1e3e68b9ab74eb54cfd186867f64f240e1a/config.json "HTTP/1.1 200 OK"
+2026-05-01 13:32:46,283 - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-base-en-v1.5/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-01 13:32:46,333 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-base-en-v1.5/a5beb1e3e68b9ab74eb54cfd186867f64f240e1a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-05-01 13:32:46,663 - INFO - HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-base-en-v1.5/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-05-01 13:32:46,985 - INFO - HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-base-en-v1.5/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-05-01 13:32:47,294 - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-base-en-v1.5/resolve/main/vocab.txt "HTTP/1.1 307 Temporary Redirect"
+2026-05-01 13:32:47,346 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-base-en-v1.5/a5beb1e3e68b9ab74eb54cfd186867f64f240e1a/vocab.txt "HTTP/1.1 200 OK"
+2026-05-01 13:32:47,408 - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/BAAI/bge-base-en-v1.5/a5beb1e3e68b9ab74eb54cfd186867f64f240e1a/vocab.txt "HTTP/1.1 200 OK"
+2026-05-01 13:32:47,793 - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-base-en-v1.5/resolve/main/tokenizer.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-01 13:32:47,845 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-base-en-v1.5/a5beb1e3e68b9ab74eb54cfd186867f64f240e1a/tokenizer.json "HTTP/1.1 200 OK"
+2026-05-01 13:32:47,903 - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/BAAI/bge-base-en-v1.5/a5beb1e3e68b9ab74eb54cfd186867f64f240e1a/tokenizer.json "HTTP/1.1 200 OK"
+2026-05-01 13:32:48,373 - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-base-en-v1.5/resolve/main/added_tokens.json "HTTP/1.1 404 Not Found"
+2026-05-01 13:32:48,673 - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-base-en-v1.5/resolve/main/special_tokens_map.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-01 13:32:48,723 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-base-en-v1.5/a5beb1e3e68b9ab74eb54cfd186867f64f240e1a/special_tokens_map.json "HTTP/1.1 200 OK"
+2026-05-01 13:32:48,783 - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/BAAI/bge-base-en-v1.5/a5beb1e3e68b9ab74eb54cfd186867f64f240e1a/special_tokens_map.json "HTTP/1.1 200 OK"
+2026-05-01 13:32:49,093 - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-base-en-v1.5/resolve/main/chat_template.jinja "HTTP/1.1 404 Not Found"
+2026-05-01 13:32:49,553 - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-base-en-v1.5/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-01 13:32:49,603 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-base-en-v1.5/a5beb1e3e68b9ab74eb54cfd186867f64f240e1a/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-05-01 13:32:49,663 - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/BAAI/bge-base-en-v1.5/a5beb1e3e68b9ab74eb54cfd186867f64f240e1a/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-05-01 13:32:49,993 - INFO - HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-base-en-v1.5 "HTTP/1.1 200 OK"
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:00<00:00,  1.43it/s]Batches: 100%|##########| 1/1 [00:00<00:00,  1.43it/s]
+   Loaded: BAAI/bge-base-en-v1.5 on cuda
+Batches:   0%|          | 0/271 [00:00<?, ?it/s]Batches:   0%|          | 1/271 [00:00<00:43,  6.14it/s]Batches:   1%|          | 2/271 [00:00<01:19,  3.40it/s]Batches:   1%|1         | 3/271 [00:00<01:16,  3.48it/s]Batches:   1%|1         | 4/271 [00:01<01:14,  3.59it/s]Batches:   2%|1         | 5/271 [00:01<01:08,  3.87it/s]Batches:   2%|2         | 6/271 [00:01<01:07,  3.92it/s]Batches:   3%|2         | 7/271 [00:01<01:02,  4.22it/s]Batches:   3%|2         | 8/271 [00:02<01:03,  4.11it/s]Batches:   3%|3         | 9/271 [00:02<01:00,  4.31it/s]Batches:   4%|3         | 10/271 [00:02<01:01,  4.28it/s]Batches:   4%|4         | 11/271 [00:02<00:55,  4.70it/s]Batches:   4%|4         | 12/271 [00:02<00:54,  4.77it/s]Batches:   5%|4         | 13/271 [00:03<00:52,  4.87it/s]Batches:   5%|5         | 14/271 [00:03<00:52,  4.86it/s]Batches:   6%|5         | 15/271 [00:03<00:58,  4.40it/s]Batches:   6%|5         | 16/271 [00:03<00:52,  4.85it/s]Batches:   6%|6         | 17/271 [00:03<00:48,  5.20it/s]Batches:   7%|6         | 18/271 [00:04<00:48,  5.21it/s]Batches:   7%|7         | 19/271 [00:04<00:48,  5.21it/s]Batches:   7%|7         | 20/271 [00:04<00:47,  5.28it/s]Batches:   8%|7         | 21/271 [00:04<00:44,  5.59it/s]Batches:   8%|8         | 22/271 [00:04<00:42,  5.82it/s]Batches:   8%|8         | 23/271 [00:04<00:41,  5.92it/s]Batches:   9%|8         | 24/271 [00:05<00:40,  6.14it/s]Batches:   9%|9         | 25/271 [00:05<00:39,  6.19it/s]Batches:  10%|9         | 26/271 [00:05<00:38,  6.41it/s]Batches:  10%|9         | 27/271 [00:05<00:38,  6.33it/s]Batches:  10%|#         | 28/271 [00:05<00:37,  6.43it/s]Batches:  11%|#         | 29/271 [00:05<00:38,  6.30it/s]Batches:  11%|#1        | 30/271 [00:05<00:39,  6.10it/s]Batches:  11%|#1        | 31/271 [00:06<00:38,  6.26it/s]Batches:  12%|#1        | 32/271 [00:06<00:38,  6.23it/s]Batches:  12%|#2        | 33/271 [00:06<00:35,  6.64it/s]Batches:  13%|#2        | 34/271 [00:06<00:35,  6.74it/s]Batches:  13%|#2        | 35/271 [00:06<00:33,  6.95it/s]Batches:  13%|#3        | 36/271 [00:06<00:33,  6.92it/s]Batches:  14%|#3        | 37/271 [00:06<00:34,  6.82it/s]Batches:  14%|#4        | 38/271 [00:07<00:33,  7.00it/s]Batches:  14%|#4        | 39/271 [00:07<00:32,  7.10it/s]Batches:  15%|#4        | 40/271 [00:07<00:33,  6.99it/s]Batches:  15%|#5        | 41/271 [00:07<00:33,  6.83it/s]Batches:  15%|#5        | 42/271 [00:07<00:35,  6.54it/s]Batches:  16%|#5        | 43/271 [00:07<00:33,  6.90it/s]Batches:  16%|#6        | 44/271 [00:07<00:32,  7.05it/s]Batches:  17%|#6        | 45/271 [00:08<00:31,  7.19it/s]Batches:  17%|#6        | 46/271 [00:08<00:30,  7.28it/s]Batches:  17%|#7        | 47/271 [00:08<00:30,  7.34it/s]Batches:  18%|#7        | 48/271 [00:08<00:31,  7.09it/s]Batches:  18%|#8        | 49/271 [00:08<00:30,  7.35it/s]Batches:  18%|#8        | 50/271 [00:08<00:30,  7.20it/s]Batches:  19%|#8        | 51/271 [00:08<00:30,  7.24it/s]Batches:  19%|#9        | 52/271 [00:09<00:30,  7.30it/s]Batches:  20%|#9        | 53/271 [00:09<00:29,  7.48it/s]Batches:  20%|#9        | 54/271 [00:09<00:28,  7.63it/s]Batches:  20%|##        | 55/271 [00:09<00:27,  7.97it/s]Batches:  21%|##        | 56/271 [00:09<00:27,  7.77it/s]Batches:  21%|##1       | 57/271 [00:09<00:27,  7.85it/s]Batches:  21%|##1       | 58/271 [00:09<00:28,  7.45it/s]Batches:  22%|##1       | 59/271 [00:10<00:29,  7.21it/s]Batches:  22%|##2       | 60/271 [00:10<00:28,  7.50it/s]Batches:  23%|##2       | 61/271 [00:10<00:29,  7.22it/s]Batches:  23%|##2       | 62/271 [00:10<00:28,  7.30it/s]Batches:  23%|##3       | 63/271 [00:10<00:27,  7.69it/s]Batches:  24%|##3       | 64/271 [00:10<00:27,  7.60it/s]Batches:  24%|##3       | 65/271 [00:10<00:31,  6.53it/s]Batches:  24%|##4       | 66/271 [00:10<00:29,  7.02it/s]Batches:  25%|##4       | 67/271 [00:11<00:27,  7.31it/s]Batches:  25%|##5       | 68/271 [00:11<00:26,  7.54it/s]Batches:  25%|##5       | 69/271 [00:11<00:26,  7.73it/s]Batches:  26%|##5       | 70/271 [00:11<00:25,  7.96it/s]Batches:  26%|##6       | 71/271 [00:11<00:24,  8.07it/s]Batches:  27%|##6       | 72/271 [00:11<00:25,  7.82it/s]Batches:  27%|##6       | 73/271 [00:11<00:24,  8.17it/s]Batches:  27%|##7       | 74/271 [00:11<00:24,  8.15it/s]Batches:  28%|##7       | 75/271 [00:12<00:24,  8.04it/s]Batches:  28%|##8       | 76/271 [00:12<00:23,  8.14it/s]Batches:  28%|##8       | 77/271 [00:12<00:23,  8.10it/s]Batches:  29%|##8       | 78/271 [00:12<00:24,  7.88it/s]Batches:  29%|##9       | 79/271 [00:12<00:24,  7.77it/s]Batches:  30%|##9       | 80/271 [00:12<00:24,  7.95it/s]Batches:  30%|##9       | 81/271 [00:12<00:24,  7.77it/s]Batches:  30%|###       | 82/271 [00:13<00:25,  7.32it/s]Batches:  31%|###       | 83/271 [00:13<00:24,  7.53it/s]Batches:  31%|###       | 84/271 [00:13<00:24,  7.66it/s]Batches:  31%|###1      | 85/271 [00:13<00:26,  7.12it/s]Batches:  32%|###1      | 86/271 [00:13<00:24,  7.68it/s]Batches:  32%|###2      | 87/271 [00:13<00:22,  8.08it/s]Batches:  32%|###2      | 88/271 [00:13<00:25,  7.11it/s]Batches:  33%|###2      | 89/271 [00:13<00:25,  7.23it/s]Batches:  33%|###3      | 90/271 [00:14<00:24,  7.42it/s]Batches:  34%|###3      | 91/271 [00:14<00:22,  7.87it/s]Batches:  34%|###3      | 92/271 [00:14<00:22,  8.01it/s]Batches:  34%|###4      | 93/271 [00:14<00:22,  8.00it/s]Batches:  35%|###4      | 94/271 [00:14<00:21,  8.30it/s]Batches:  35%|###5      | 95/271 [00:14<00:20,  8.61it/s]Batches:  35%|###5      | 96/271 [00:14<00:21,  8.26it/s]Batches:  36%|###5      | 97/271 [00:14<00:22,  7.75it/s]Batches:  36%|###6      | 98/271 [00:15<00:21,  8.09it/s]Batches:  37%|###6      | 99/271 [00:15<00:21,  7.94it/s]Batches:  37%|###6      | 100/271 [00:15<00:21,  7.99it/s]Batches:  37%|###7      | 101/271 [00:15<00:21,  7.93it/s]Batches:  38%|###7      | 102/271 [00:15<00:20,  8.25it/s]Batches:  38%|###8      | 103/271 [00:15<00:20,  8.31it/s]Batches:  38%|###8      | 104/271 [00:15<00:20,  8.08it/s]Batches:  39%|###8      | 105/271 [00:15<00:19,  8.56it/s]Batches:  39%|###9      | 106/271 [00:15<00:19,  8.54it/s]Batches:  39%|###9      | 107/271 [00:16<00:18,  8.69it/s]Batches:  40%|###9      | 108/271 [00:16<00:19,  8.42it/s]Batches:  40%|####      | 109/271 [00:16<00:21,  7.57it/s]Batches:  41%|####      | 110/271 [00:16<00:20,  8.00it/s]Batches:  41%|####      | 111/271 [00:16<00:20,  7.85it/s]Batches:  41%|####1     | 112/271 [00:16<00:21,  7.29it/s]Batches:  42%|####1     | 113/271 [00:16<00:21,  7.50it/s]Batches:  42%|####2     | 114/271 [00:17<00:19,  8.00it/s]Batches:  42%|####2     | 115/271 [00:17<00:19,  8.19it/s]Batches:  43%|####2     | 116/271 [00:17<00:22,  6.74it/s]Batches:  43%|####3     | 117/271 [00:17<00:21,  7.24it/s]Batches:  44%|####3     | 118/271 [00:17<00:21,  7.10it/s]Batches:  44%|####3     | 119/271 [00:17<00:19,  7.64it/s]Batches:  44%|####4     | 120/271 [00:17<00:20,  7.47it/s]Batches:  45%|####4     | 121/271 [00:17<00:19,  7.62it/s]Batches:  45%|####5     | 122/271 [00:18<00:19,  7.50it/s]Batches:  45%|####5     | 123/271 [00:18<00:18,  7.95it/s]Batches:  46%|####5     | 124/271 [00:18<00:18,  7.96it/s]Batches:  46%|####6     | 126/271 [00:18<00:17,  8.42it/s]Batches:  47%|####6     | 127/271 [00:18<00:16,  8.65it/s]Batches:  47%|####7     | 128/271 [00:18<00:16,  8.57it/s]Batches:  48%|####7     | 129/271 [00:18<00:17,  8.21it/s]Batches:  48%|####7     | 130/271 [00:19<00:17,  8.02it/s]Batches:  48%|####8     | 131/271 [00:19<00:16,  8.40it/s]Batches:  49%|####8     | 132/271 [00:19<00:16,  8.53it/s]Batches:  49%|####9     | 134/271 [00:19<00:15,  9.03it/s]Batches:  50%|####9     | 135/271 [00:19<00:15,  8.96it/s]Batches:  50%|#####     | 136/271 [00:19<00:15,  8.56it/s]Batches:  51%|#####     | 137/271 [00:19<00:15,  8.72it/s]Batches:  51%|#####     | 138/271 [00:19<00:14,  8.91it/s]Batches:  51%|#####1    | 139/271 [00:20<00:15,  8.64it/s]Batches:  52%|#####1    | 140/271 [00:20<00:14,  8.82it/s]Batches:  52%|#####2    | 142/271 [00:20<00:13,  9.72it/s]Batches:  53%|#####2    | 143/271 [00:20<00:13,  9.33it/s]Batches:  53%|#####3    | 144/271 [00:20<00:15,  8.27it/s]Batches:  54%|#####3    | 145/271 [00:20<00:14,  8.41it/s]Batches:  54%|#####4    | 147/271 [00:20<00:13,  9.24it/s]Batches:  55%|#####4    | 148/271 [00:21<00:13,  9.40it/s]Batches:  55%|#####5    | 150/271 [00:21<00:12,  9.67it/s]Batches:  56%|#####5    | 151/271 [00:21<00:12,  9.74it/s]Batches:  56%|#####6    | 152/271 [00:21<00:12,  9.59it/s]Batches:  56%|#####6    | 153/271 [00:21<00:12,  9.60it/s]Batches:  57%|#####7    | 155/271 [00:21<00:11, 10.32it/s]Batches:  58%|#####7    | 157/271 [00:21<00:11, 10.29it/s]Batches:  59%|#####8    | 159/271 [00:22<00:11,  9.45it/s]Batches:  59%|#####9    | 160/271 [00:22<00:11,  9.37it/s]Batches:  59%|#####9    | 161/271 [00:22<00:12,  8.96it/s]Batches:  60%|#####9    | 162/271 [00:22<00:12,  8.88it/s]Batches:  60%|######    | 163/271 [00:22<00:11,  9.08it/s]Batches:  61%|######    | 164/271 [00:22<00:12,  8.76it/s]Batches:  61%|######    | 165/271 [00:22<00:11,  9.00it/s]Batches:  61%|######1   | 166/271 [00:22<00:11,  8.80it/s]Batches:  62%|######1   | 167/271 [00:23<00:11,  8.81it/s]Batches:  62%|######1   | 168/271 [00:23<00:11,  8.74it/s]Batches:  62%|######2   | 169/271 [00:23<00:11,  9.02it/s]Batches:  63%|######2   | 170/271 [00:23<00:11,  8.92it/s]Batches:  63%|######3   | 171/271 [00:23<00:11,  8.86it/s]Batches:  64%|######3   | 173/271 [00:23<00:10,  9.00it/s]Batches:  64%|######4   | 174/271 [00:23<00:10,  8.90it/s]Batches:  65%|######4   | 175/271 [00:23<00:10,  8.92it/s]Batches:  65%|######5   | 177/271 [00:24<00:10,  9.37it/s]Batches:  66%|######5   | 178/271 [00:24<00:09,  9.40it/s]Batches:  66%|######6   | 180/271 [00:24<00:09,  9.32it/s]Batches:  67%|######6   | 181/271 [00:24<00:09,  9.29it/s]Batches:  67%|######7   | 182/271 [00:24<00:10,  8.87it/s]Batches:  68%|######7   | 184/271 [00:24<00:09,  9.16it/s]Batches:  69%|######8   | 186/271 [00:25<00:08,  9.56it/s]Batches:  69%|######9   | 188/271 [00:25<00:08,  9.40it/s]Batches:  70%|#######   | 190/271 [00:25<00:08,  9.90it/s]Batches:  71%|#######   | 192/271 [00:25<00:07, 10.14it/s]Batches:  72%|#######1  | 194/271 [00:25<00:07, 10.37it/s]Batches:  72%|#######2  | 196/271 [00:26<00:06, 10.73it/s]Batches:  73%|#######3  | 198/271 [00:26<00:07, 10.29it/s]Batches:  74%|#######3  | 200/271 [00:26<00:06, 10.70it/s]Batches:  75%|#######4  | 202/271 [00:26<00:06, 10.55it/s]Batches:  75%|#######5  | 204/271 [00:26<00:06, 10.44it/s]Batches:  76%|#######6  | 206/271 [00:27<00:06, 10.51it/s]Batches:  77%|#######6  | 208/271 [00:27<00:06, 10.38it/s]Batches:  77%|#######7  | 210/271 [00:27<00:05, 10.40it/s]Batches:  78%|#######8  | 212/271 [00:27<00:05, 10.77it/s]Batches:  79%|#######8  | 214/271 [00:27<00:05, 10.77it/s]Batches:  80%|#######9  | 216/271 [00:27<00:04, 11.21it/s]Batches:  80%|########  | 218/271 [00:28<00:04, 11.28it/s]Batches:  81%|########1 | 220/271 [00:28<00:04, 11.41it/s]Batches:  82%|########1 | 222/271 [00:28<00:04, 11.64it/s]Batches:  83%|########2 | 224/271 [00:28<00:04, 11.67it/s]Batches:  83%|########3 | 226/271 [00:28<00:03, 12.11it/s]Batches:  84%|########4 | 228/271 [00:28<00:03, 12.32it/s]Batches:  85%|########4 | 230/271 [00:29<00:03, 12.34it/s]Batches:  86%|########5 | 232/271 [00:29<00:03, 12.87it/s]Batches:  86%|########6 | 234/271 [00:29<00:02, 12.43it/s]Batches:  87%|########7 | 236/271 [00:29<00:02, 12.30it/s]Batches:  88%|########7 | 238/271 [00:29<00:02, 12.38it/s]Batches:  89%|########8 | 240/271 [00:29<00:02, 12.25it/s]Batches:  89%|########9 | 242/271 [00:30<00:02, 12.72it/s]Batches:  90%|######### | 244/271 [00:30<00:02, 13.04it/s]Batches:  91%|######### | 246/271 [00:30<00:01, 13.15it/s]Batches:  92%|#########1| 248/271 [00:30<00:01, 13.77it/s]Batches:  92%|#########2| 250/271 [00:30<00:01, 13.74it/s]Batches:  93%|#########2| 252/271 [00:30<00:01, 13.86it/s]Batches:  94%|#########3| 254/271 [00:30<00:01, 14.37it/s]Batches:  94%|#########4| 256/271 [00:31<00:00, 15.13it/s]Batches:  95%|#########5| 258/271 [00:31<00:00, 14.78it/s]Batches:  96%|#########5| 260/271 [00:31<00:00, 14.42it/s]Batches:  97%|#########6| 262/271 [00:31<00:00, 15.55it/s]Batches:  97%|#########7| 264/271 [00:31<00:00, 15.85it/s]Batches:  98%|#########8| 266/271 [00:31<00:00, 16.77it/s]Batches:  99%|#########9| 269/271 [00:31<00:00, 18.12it/s]Batches: 100%|##########| 271/271 [00:31<00:00,  8.50it/s]
+2026-05-01 13:33:23,326 - INFO - FAISS index built: 8660 vectors
+2026-05-01 13:33:24,386 - INFO - Cached embeddings saved
+2026-05-01 13:33:29,677 - INFO - Cached embeddings saved
+2026-05-01 13:33:29,679 - INFO - Dataset hash saved: 5d2772d8...
+
+Embeddings computed!
+
+======================================================================
+TRAINING HYBRID MODEL
+======================================================================
+
+   Train positives: 199 | Val positives: 84
+
+[1/4] Computing scores for training positives...
+   Valid training positives: 199
+
+[2/4] Mining mixed negatives for training...
+
+   Mining medium-hard negatives (10th-40th percentile TF-IDF)...
+   Mined 99 medium-hard negatives
+
+   Total training samples: 398
+   Positives: 199 | Negatives: 199
+
+[3/4] Learning optimal fusion weights via LR...
+   Learned weights: TF-IDF=0.545, BERT=0.455
+
+   Training Score Distribution (fused):
+     Positive: mean=0.415, std=0.164
+     Negative: mean=0.134, std=0.097
+     Separation: 0.281
+
+[4/4] Building validation set, calibrating, optimizing threshold...
+
+   Mining medium-hard negatives (10th-40th percentile TF-IDF)...
+   Mined 42 medium-hard negatives
+
+   Validation set: 168 samples (pos=84, neg=84)
+   Calibrator fitted: True
+   Model used: BAAI/bge-base-en-v1.5
+   Calibrated val score range: [0.197, 0.897]
+     Positives: mean=0.663
+     Negatives: mean=0.337
+
+   Optimizing threshold on calibrated pair-level (mixed val) scores...
+   Samples: pos=84, neg=84
+   Score range: [0.197, 0.897]
+   Optimal threshold (BAC-maximising): 0.495
+   Accuracy=0.899  Prec=0.947  Rec=0.845  F1=0.893  BAC=0.899
+   AUC-ROC: 0.918
+
+   [Sparsity adjustment] Threshold 0.495 -> 0.445
+
+======================================================================
+BUILDING HELD-OUT TEST SET (mixed negatives)
+======================================================================
+
+   Mining medium-hard negatives (10th-40th percentile TF-IDF)...
+   Mined 100 medium-hard negatives
+Test set: 400 samples  (pos=200, neg=200)
+
+======================================================================
+MODEL EVALUATION
+======================================================================
+
+   Evaluation set: 400 samples (pos=200, neg=200)
+   BERT model: BAAI/bge-base-en-v1.5
+
+   RAW Hybrid Score Distribution:
+     Overall: min=0.000, max=0.954, mean=0.275
+     Positives: mean=0.407, std=0.160
+     Negatives: mean=0.144, std=0.098
+     Separation: 0.263
+
+   CALIBRATED Score Distribution:
+     Positives: mean=0.651, std=0.175
+     Negatives: mean=0.346, std=0.112
+     Separation: 0.305
+
+[Classification Results] (threshold=0.445):
+   Accuracy:          0.840  (84.0%)
+   Balanced Accuracy: 0.840
+   Precision:         0.840
+   Recall:            0.840
+   F1 Score:          0.840
+   AUC-ROC:           0.892
+   Avg Precision:     0.927
+
+[Retrieval Metrics] (out of 200 positives):
+   Recall@10  : 0.365  (36.5%)
+   Recall@20  : 0.445  (44.5%)
+   Recall@50  : 0.550  (55.0%)
+   Recall@100 : 0.635  (63.5%)
+
+======================================================================
+SAMPLE NOVELTY PREDICTIONS
+======================================================================
+
+--- Test Patent 1 ---
+
+======================================================================
+NOVELTY PREDICTION
+======================================================================
+
+[Query]: A quantum-inspired neural network architecture for real-time pattern recognition
+        using adaptive resonance theory and deep reinforcement learni...
+
+[Results]:
+   Max Calibrated Score:    0.7661 (76.6%)
+   Top-3 Avg Cal Score:     0.7447 (74.5%)
+   Decision Threshold:      0.445
+   Novelty Floor:           0.300
+   Inference Time:          0.217s
+   Confidence:              High
+   Fusion Weights:          TF-IDF=0.545, BERT=0.455
+   BERT Model:              BAAI/bge-base-en-v1.5
+   Calibrator fitted:       True
+
+============================================================
+MOST SIMILAR PATENT (Decision Driver)
+============================================================
+
+  Patent ID : 11386325
+  Title     : Ensemble neural network state machine for detecting distractions...
+  TF-IDF    : 0.2608
+  BERT      : 0.7981
+  Hybrid    : 0.5053
+  Calibrated: 0.7661
+
+============================================================
+TOP 10 SIMILAR PATENTS
+============================================================
+
+ 1. Patent: 11386325
+    Title  : Ensemble neural network state machine for detecting distractions...
+    TFIDF=0.2608 | BERT=0.7981 | Hybrid=0.5053 | Cal=0.7661
+
+ 2. Patent: 11237894
+    Title  : Layer control unit instruction addressing safety mechanism in an artif...
+    TFIDF=0.1833 | BERT=0.8176 | Hybrid=0.4719 | Cal=0.7340
+
+ 3. Patent: 10013773
+    Title  : Neural networks for object detection...
+    TFIDF=0.1885 | BERT=0.8109 | Hybrid=0.4718 | Cal=0.7339
+
+ 4. Patent: 5245697
+    Title  : Neural network processing apparatus for identifying an unknown image p...
+    TFIDF=0.1740 | BERT=0.8233 | Hybrid=0.4695 | Cal=0.7316
+
+ 5. Patent: 5359700
+    Title  : Neural network incorporating difference neurons...
+    TFIDF=0.1787 | BERT=0.8170 | Hybrid=0.4692 | Cal=0.7313
+
+ 6. Patent: 6904422
+    Title  : Adaptive control system having direct output feedback and related appa...
+    TFIDF=0.1672 | BERT=0.8184 | Hybrid=0.4636 | Cal=0.7256
+
+ 7. Patent: 7406451
+    Title  : Method for training neural networks...
+    TFIDF=0.1865 | BERT=0.7802 | Hybrid=0.4567 | Cal=0.7185
+
+ 8. Patent: 6865536
+    Title  : Method and system for network-based speech recognition...
+    TFIDF=0.1739 | BERT=0.7809 | Hybrid=0.4501 | Cal=0.7116
+
+ 9. Patent: 11244195
+    Title  : Iteratively applying neural networks to automatically identify pixels ...
+    TFIDF=0.1427 | BERT=0.8000 | Hybrid=0.4419 | Cal=0.7028
+
+10. Patent: 8053715
+    Title  : Method and system for creating an image using the quantum properties o...
+    TFIDF=0.0911 | BERT=0.8389 | Hybrid=0.4314 | Cal=0.6915
+
+============================================================
+[DECISION]: [REJECT] Not Novel (High Similarity Detected)
+============================================================
+
+--- Test Patent 2 ---
+
+======================================================================
+NOVELTY PREDICTION
+======================================================================
+
+[Query]: A bicycle lock mechanism using a standard tumbler design with three rotating
+        discs. The user sets a numeric combination to lock and unlock the...
+
+[Results]:
+   Max Calibrated Score:    0.7892 (78.9%)
+   Top-3 Avg Cal Score:     0.7588 (75.9%)
+   Decision Threshold:      0.445
+   Novelty Floor:           0.300
+   Inference Time:          0.217s
+   Confidence:              High
+   Fusion Weights:          TF-IDF=0.545, BERT=0.455
+   BERT Model:              BAAI/bge-base-en-v1.5
+   Calibrator fitted:       True
+
+============================================================
+MOST SIMILAR PATENT (Decision Driver)
+============================================================
+
+  Patent ID : 4170886
+  Title     : Numerical combination replacement for cylinder locks...
+  TF-IDF    : 0.2542
+  BERT      : 0.8631
+  Hybrid    : 0.5313
+  Calibrated: 0.7892
+
+============================================================
+TOP 10 SIMILAR PATENTS
+============================================================
+
+ 1. Patent: 4170886
+    Title  : Numerical combination replacement for cylinder locks...
+    TFIDF=0.2542 | BERT=0.8631 | Hybrid=0.5313 | Cal=0.7892
+
+ 2. Patent: 6845642
+    Title  : Clutch mechanism for electronic locks...
+    TFIDF=0.1738 | BERT=0.8628 | Hybrid=0.4873 | Cal=0.7492
+
+ 3. Patent: 5305969
+    Title  : Aircraft door latch lock mechanism...
+    TFIDF=0.1773 | BERT=0.8337 | Hybrid=0.4760 | Cal=0.7381
+
+ 4. Patent: 7254971
+    Title  : Combination lock...
+    TFIDF=0.1107 | BERT=0.8784 | Hybrid=0.4601 | Cal=0.7220
+
+ 5. Patent: 5369306
+    Title  : Automatic locking and unlocking unit for a vehicle...
+    TFIDF=0.1657 | BERT=0.8098 | Hybrid=0.4588 | Cal=0.7207
+
+ 6. Patent: 10240389
+    Title  : Pressure relief door...
+    TFIDF=0.1559 | BERT=0.8141 | Hybrid=0.4554 | Cal=0.7172
+
+ 7. Patent: 8671724
+    Title  : Multiple access door lock mechanism...
+    TFIDF=0.1192 | BERT=0.8511 | Hybrid=0.4523 | Cal=0.7138
+
+ 8. Patent: 9488427
+    Title  : Fast access trigger lock...
+    TFIDF=0.1349 | BERT=0.8282 | Hybrid=0.4504 | Cal=0.7119
+
+ 9. Patent: 5810619
+    Title  : Double lock connector with flexible lance on spacer...
+    TFIDF=0.1425 | BERT=0.8085 | Hybrid=0.4456 | Cal=0.7068
+
+10. Patent: 6494670
+    Title  : Three chamber load lock apparatus...
+    TFIDF=0.1029 | BERT=0.8357 | Hybrid=0.4364 | Cal=0.6969
+
+============================================================
+[DECISION]: [REJECT] Not Novel (High Similarity Detected)
+============================================================
+
+--- Test Patent 3 ---
+
+======================================================================
+NOVELTY PREDICTION
+======================================================================
+
+[Query]: A method for training large language models using reinforcement learning from
+        human feedback (RLHF), comprising a reward model trained on huma...
+
+[Results]:
+   Max Calibrated Score:    0.7231 (72.3%)
+   Top-3 Avg Cal Score:     0.7158 (71.6%)
+   Decision Threshold:      0.445
+   Novelty Floor:           0.300
+   Inference Time:          0.211s
+   Confidence:              High
+   Fusion Weights:          TF-IDF=0.545, BERT=0.455
+   BERT Model:              BAAI/bge-base-en-v1.5
+   Calibrator fitted:       True
+
+============================================================
+MOST SIMILAR PATENT (Decision Driver)
+============================================================
+
+  Patent ID : 6996553
+  Title     : Fast policy classification for strings...
+  TF-IDF    : 0.1466
+  BERT      : 0.8377
+  Hybrid    : 0.4611
+  Calibrated: 0.7231
+
+============================================================
+TOP 10 SIMILAR PATENTS
+============================================================
+
+ 1. Patent: 6996553
+    Title  : Fast policy classification for strings...
+    TFIDF=0.1466 | BERT=0.8377 | Hybrid=0.4611 | Cal=0.7231
+
+ 2. Patent: 11416622
+    Title  : Open source vulnerability prediction with machine learning ensemble...
+    TFIDF=0.1598 | BERT=0.8015 | Hybrid=0.4518 | Cal=0.7134
+
+ 3. Patent: 7693257
+    Title  : Treatment delivery optimization...
+    TFIDF=0.1479 | BERT=0.8103 | Hybrid=0.4494 | Cal=0.7108
+
+ 4. Patent: 8683545
+    Title  : Federating policies from multiple policy providers...
+    TFIDF=0.1582 | BERT=0.7794 | Hybrid=0.4409 | Cal=0.7018
+
+ 5. Patent: 9358685
+    Title  : Apparatus and methods for control of robot actions based on corrective...
+    TFIDF=0.1133 | BERT=0.8316 | Hybrid=0.4402 | Cal=0.7010
+
+ 6. Patent: 9684967
+    Title  : Imaging segmentation using multi-scale machine learning approach...
+    TFIDF=0.1562 | BERT=0.7685 | Hybrid=0.4348 | Cal=0.6952
+
+ 7. Patent: 5847952
+    Title  : Nonlinear-approximator-based automatic tuner...
+    TFIDF=0.1203 | BERT=0.8002 | Hybrid=0.4297 | Cal=0.6896
+
+ 8. Patent: 9471844
+    Title  : Dynamic absorption window for foreground background detector...
+    TFIDF=0.1328 | BERT=0.7786 | Hybrid=0.4267 | Cal=0.6863
+
+ 9. Patent: 10467507
+    Title  : Image quality scoring...
+    TFIDF=0.1367 | BERT=0.7729 | Hybrid=0.4262 | Cal=0.6858
+
+10. Patent: 8606420
+    Title  : Solving large-scale security-constrained economic dispatch problem in ...
+    TFIDF=0.1008 | BERT=0.8144 | Hybrid=0.4256 | Cal=0.6850
+
+============================================================
+[DECISION]: [REJECT] Not Novel (High Similarity Detected)
+============================================================
+
+======================================================================
+SYSTEM SUMMARY
+======================================================================
+  BERT Model           : BAAI/bge-base-en-v1.5
+  Final threshold      : 0.445
+  Novelty floor        : 0.300
+  TF-IDF plaus. floor  : 0.050
+  RRF k constant       : 60
+  Fusion weights       : TF-IDF=0.545, BERT=0.455
+  Calibrator fitted    : True
+  Test Accuracy        : 0.840
+  Test Bal. Acc.       : 0.840
+  Test Precision       : 0.840
+  Test Recall          : 0.840
+  Test F1              : 0.840
+  Test AUC-ROC         : 0.892
+  Recall@10            : 0.365  (36.5%)
+  Recall@20            : 0.445  (44.5%)
+  Recall@50            : 0.550  (55.0%)
+  Recall@100           : 0.635  (63.5%)
+
+  System ready for production.

@@ -1,0 +1,61 @@
+============================================================
+BUILDING CITATION-AWARE DATASET
+============================================================
+
+1. Analyzing citation graph (chunked)...
+Citation columns found: ['patent_id', 'citation_sequence', 'citation_patent_id', 'citation_date', 'record_name', 'wipo_kind', 'citation_category']
+Found 3019111 core patents with bidirectional citations
+Limited to 10000 core patents for memory
+
+2. Loading patent data for core patents...
+Loaded 10000 patents from patent file
+Final patent count after merge: 8389
+
+Preprocessing patent texts...
+
+3. Extracting citation pairs among these patents...
+Found 512 citation pairs within the dataset
+
+4. Creating training pairs...
+Created 1024 pairs (512 positive, 512 negative)
+
+============================================================
+TRAINING & EVALUATION
+============================================================
+
+Train: 716, Val: 154, Test: 154
+Train: 716, Val: 154, Test: 154
+Vocabulary size: 3269
+
+Optimal mid threshold (F1): 0.050 (F1=0.828)
+High threshold (75th percentile of positives): 0.231
+
+============================================================
+TEST SET PERFORMANCE
+============================================================
+Accuracy:  0.844 (84.4%)
+Precision: 0.896
+Recall:    0.779
+F1-Score:  0.833
+AUC-ROC:   0.919
+
+Confusion Matrix:
+  TN: 70  FP: 7
+  FN: 17  TP: 60
+
+============================================================
+NOVELTY PREDICTION
+============================================================
+
+Max similarity: 0.258
+Mean similarity: 0.012
+Median similarity: 0.000
+
+Found 680 patents above mid threshold. Top 5:
+  12056830 - Augmenting real-time views of a patient with three-dimensional data... (sim: 0.258)
+  4429414 - Pattern recognition system operating by the multiple similarity method... (sim: 0.249)
+  4327622 - Electronic musical instrument realizing automatic performance by memorized progr... (sim: 0.237)
+  8498865 - Speech recognition system and method using group call statistics... (sim: 0.216)
+  9497203 - System and methods for adaptive model generation for detecting intrusion in comp... (sim: 0.215)
+
+DECISION: REJECT (Highly Similar)

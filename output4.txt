@@ -1,0 +1,576 @@
+2026-05-04 18:08:21,833 - INFO - No device provided, using cuda:0
+2026-05-04 18:08:23,311 - INFO - HTTP Request: HEAD https://huggingface.co/anferico/bert-for-patents/resolve/main/modules.json "HTTP/1.1 404 Not Found"
+2026-05-04 18:08:23,324 - INFO - No modules.json found for anferico/bert-for-patents, initializing a new SentenceTransformer model.
+2026-05-04 18:08:23,646 - INFO - HTTP Request: HEAD https://huggingface.co/anferico/bert-for-patents/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-05-04 18:08:23,647 - WARNING - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-05-04 18:08:23,968 - INFO - HTTP Request: HEAD https://huggingface.co/anferico/bert-for-patents/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-04 18:08:24,037 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/anferico/bert-for-patents/148e559789f59c2660cb7e7aaa0812041660c607/config.json "HTTP/1.1 200 OK"
+2026-05-04 18:08:24,356 - INFO - HTTP Request: HEAD https://huggingface.co/anferico/bert-for-patents/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-04 18:08:24,416 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/anferico/bert-for-patents/148e559789f59c2660cb7e7aaa0812041660c607/config.json "HTTP/1.1 200 OK"
+2026-05-04 18:08:24,726 - INFO - HTTP Request: HEAD https://huggingface.co/anferico/bert-for-patents/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-04 18:08:24,786 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/anferico/bert-for-patents/148e559789f59c2660cb7e7aaa0812041660c607/config.json "HTTP/1.1 200 OK"
+2026-05-04 18:08:25,126 - INFO - HTTP Request: HEAD https://huggingface.co/anferico/bert-for-patents/resolve/main/tokenizer_config.json "HTTP/1.1 404 Not Found"
+2026-05-04 18:08:25,446 - INFO - HTTP Request: HEAD https://huggingface.co/anferico/bert-for-patents/resolve/main/tokenizer_config.json "HTTP/1.1 404 Not Found"
+2026-05-04 18:08:25,766 - INFO - HTTP Request: GET https://huggingface.co/api/models/anferico/bert-for-patents/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-05-04 18:08:26,086 - INFO - HTTP Request: GET https://huggingface.co/api/models/anferico/bert-for-patents/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-05-04 18:08:26,406 - INFO - HTTP Request: HEAD https://huggingface.co/anferico/bert-for-patents/resolve/main/tokenizer.json "HTTP/1.1 404 Not Found"
+2026-05-04 18:08:26,727 - INFO - HTTP Request: HEAD https://huggingface.co/anferico/bert-for-patents/resolve/main/tokenizer.model "HTTP/1.1 404 Not Found"
+2026-05-04 18:08:27,046 - INFO - HTTP Request: HEAD https://huggingface.co/anferico/bert-for-patents/resolve/main/added_tokens.json "HTTP/1.1 404 Not Found"
+2026-05-04 18:08:27,366 - INFO - HTTP Request: HEAD https://huggingface.co/anferico/bert-for-patents/resolve/main/special_tokens_map.json "HTTP/1.1 404 Not Found"
+2026-05-04 18:08:27,696 - INFO - HTTP Request: HEAD https://huggingface.co/anferico/bert-for-patents/resolve/main/tokenizer_config.json "HTTP/1.1 404 Not Found"
+2026-05-04 18:08:28,006 - INFO - HTTP Request: HEAD https://huggingface.co/anferico/bert-for-patents/resolve/main/chat_template.jinja "HTTP/1.1 404 Not Found"
+2026-05-04 18:08:28,034 - INFO - No device provided, using cuda:0
+2026-05-04 18:08:28,346 - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-base-en-v1.5/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-04 18:08:28,406 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-base-en-v1.5/a5beb1e3e68b9ab74eb54cfd186867f64f240e1a/modules.json "HTTP/1.1 200 OK"
+2026-05-04 18:08:28,716 - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-base-en-v1.5/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-04 18:08:28,786 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-base-en-v1.5/a5beb1e3e68b9ab74eb54cfd186867f64f240e1a/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-05-04 18:08:28,791 - INFO - Loading SentenceTransformer model from BAAI/bge-base-en-v1.5.
+2026-05-04 18:08:29,096 - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-base-en-v1.5/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-04 18:08:29,156 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-base-en-v1.5/a5beb1e3e68b9ab74eb54cfd186867f64f240e1a/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-05-04 18:08:29,477 - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-base-en-v1.5/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-05-04 18:08:29,536 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-base-en-v1.5/a5beb1e3e68b9ab74eb54cfd186867f64f240e1a/README.md "HTTP/1.1 200 OK"
+2026-05-04 18:08:29,856 - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-base-en-v1.5/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-04 18:08:29,926 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-base-en-v1.5/a5beb1e3e68b9ab74eb54cfd186867f64f240e1a/modules.json "HTTP/1.1 200 OK"
+2026-05-04 18:08:30,266 - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-base-en-v1.5/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-04 18:08:30,326 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-base-en-v1.5/a5beb1e3e68b9ab74eb54cfd186867f64f240e1a/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-05-04 18:08:30,636 - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-base-en-v1.5/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-05-04 18:08:30,947 - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-base-en-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-04 18:08:31,006 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-base-en-v1.5/a5beb1e3e68b9ab74eb54cfd186867f64f240e1a/config.json "HTTP/1.1 200 OK"
+======================================================================
+PATENT NOVELTY CHECK SYSTEM — CORRECTED VERSION v10
+======================================================================
+
+Author    : Devika Bakshi (122CS0301)
+Supervisor: Asst. Prof. Sumanta Pyne
+Institute : NIT Rourkela
+Start     : 2026-05-04 17:24:13
+
+[USE_PATENT_BERT = True]
+  → Trying anferico/bert-for-patents first
+
+──────────────────────────────────────────────────────────────────────
+SETUP NOTES
+──────────────────────────────────────────────────────────────────────
+To fix Patent-BERT loading (v9 tokenizer error):
+  pip install --upgrade transformers tokenizers sentencepiece protobuf
+  pip install sentence-transformers
+
+v10 will auto-detect which model loaded and apply correct thresholds.
+No manual threshold changes needed after model switch.
+──────────────────────────────────────────────────────────────────────
+
+[Device]: cuda
+   GPU: NVIDIA GeForce RTX 3060 Laptop GPU
+
+[Mode]: Patent-BERT (requested)
+======================================================================
+BUILDING CITATION-AWARE DATASET
+======================================================================
+
+[1/5] Analyzing citation graph...
+Columns: citing='patent_id', cited='citation_patent_id'
+Core patents: 5,237,624
+Sampled 10,000
+
+[2/5] Loading patent data...
+Loaded 10,000
+
+[3/5] Loading abstracts...
+Patent count: 8,693
+
+[4/5] Preprocessing...
+After filter: 8,693
+
+[5/5] Extracting citation pairs...
+Citation pairs: 280
+   [WARNING] Low citation density (0.000371%) — threshold adj applied
+Positive pairs: 280
+
+[INFO] Dataset / model changed — recomputing all embeddings
+   Hash: 06ef7f6d → 137657a6
+
+======================================================================
+COMPUTING EMBEDDINGS
+======================================================================
+
+[1/2] TF-IDF (trigrams, 15k features)...
+   Dense TF-IDF cached: (8693, 15000)
+
+[2/2] BERT embeddings...
+
+   Trying: anferico/bert-for-patents (method=sbert)
+   ✗ anferico/bert-for-patents — ValueError: Unrecognized model in anferico/bert-for-patents. Should have a `model_type` key in its config.json.
+
+   Trying: anferico/bert-for-patents (method=hf_bert)
+   ✗ anferico/bert-for-patents — tokenizer error: pip install --upgrade transformers tokenizers
+
+   Trying: BAAI/bge-base-en-v1.5 (method=sbert)
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|##########| 199/199 [00:00<00:00, 2038.76it/s]
+2026-05-04 18:08:31,927 - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-base-en-v1.5/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-05-04 18:08:32,246 - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-base-en-v1.5/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-05-04 18:08:32,567 - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-base-en-v1.5/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-05-04 18:08:32,898 - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-base-en-v1.5/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-05-04 18:08:33,217 - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-base-en-v1.5/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-04 18:08:33,276 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-base-en-v1.5/a5beb1e3e68b9ab74eb54cfd186867f64f240e1a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-05-04 18:08:33,587 - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-base-en-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-04 18:08:33,648 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-base-en-v1.5/a5beb1e3e68b9ab74eb54cfd186867f64f240e1a/config.json "HTTP/1.1 200 OK"
+2026-05-04 18:08:33,977 - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-base-en-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-04 18:08:34,036 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-base-en-v1.5/a5beb1e3e68b9ab74eb54cfd186867f64f240e1a/config.json "HTTP/1.1 200 OK"
+2026-05-04 18:08:34,346 - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-base-en-v1.5/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-04 18:08:34,416 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-base-en-v1.5/a5beb1e3e68b9ab74eb54cfd186867f64f240e1a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-05-04 18:08:34,756 - INFO - HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-base-en-v1.5/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-05-04 18:08:35,101 - INFO - HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-base-en-v1.5/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-05-04 18:08:35,567 - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-base-en-v1.5/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-04 18:08:35,626 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-base-en-v1.5/a5beb1e3e68b9ab74eb54cfd186867f64f240e1a/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-05-04 18:08:35,955 - INFO - HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-base-en-v1.5 "HTTP/1.1 200 OK"
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:00<00:00,  1.16it/s]Batches: 100%|##########| 1/1 [00:00<00:00,  1.16it/s]
+   Smoke test embedding norm: 1.0000
+   ⚠ General-purpose model loaded: BAAI/bge-base-en-v1.5
+   NOTE: Patent-BERT failed — switching to GENERAL mode thresholds
+   → Mode switched to: GENERAL (wider drift thresholds)
+   → Drift threshold relaxed: top_tfidf < 0.2
+   → Strong drift override:   max_tfidf < 0.22
+   TIP: pip install --upgrade transformers tokenizers sentencepiece
+        → then re-run for full Patent-BERT accuracy
+Batches:   0%|          | 0/272 [00:00<?, ?it/s]Batches:   0%|          | 1/272 [00:00<00:55,  4.92it/s]Batches:   1%|          | 2/272 [00:00<01:41,  2.66it/s]Batches:   1%|1         | 3/272 [00:01<01:43,  2.59it/s]Batches:   1%|1         | 4/272 [00:01<01:27,  3.05it/s]Batches:   2%|1         | 5/272 [00:01<01:15,  3.52it/s]Batches:   2%|2         | 6/272 [00:01<01:08,  3.89it/s]Batches:   3%|2         | 7/272 [00:01<01:04,  4.14it/s]Batches:   3%|2         | 8/272 [00:02<01:01,  4.26it/s]Batches:   3%|3         | 9/272 [00:02<00:58,  4.49it/s]Batches:   4%|3         | 10/272 [00:02<00:54,  4.84it/s]Batches:   4%|4         | 11/272 [00:02<00:52,  4.94it/s]Batches:   4%|4         | 12/272 [00:02<00:49,  5.20it/s]Batches:   5%|4         | 13/272 [00:03<00:49,  5.21it/s]Batches:   5%|5         | 14/272 [00:03<00:47,  5.48it/s]Batches:   6%|5         | 15/272 [00:03<00:46,  5.49it/s]Batches:   6%|5         | 16/272 [00:03<00:45,  5.63it/s]Batches:   6%|6         | 17/272 [00:03<00:44,  5.78it/s]Batches:   7%|6         | 18/272 [00:03<00:43,  5.77it/s]Batches:   7%|6         | 19/272 [00:04<00:42,  5.98it/s]Batches:   7%|7         | 20/272 [00:04<00:40,  6.22it/s]Batches:   8%|7         | 21/272 [00:04<00:41,  6.09it/s]Batches:   8%|8         | 22/272 [00:04<00:43,  5.75it/s]Batches:   8%|8         | 23/272 [00:04<00:41,  6.00it/s]Batches:   9%|8         | 24/272 [00:04<00:40,  6.18it/s]Batches:   9%|9         | 25/272 [00:05<00:40,  6.10it/s]Batches:  10%|9         | 26/272 [00:05<00:38,  6.40it/s]Batches:  10%|9         | 27/272 [00:05<00:37,  6.49it/s]Batches:  10%|#         | 28/272 [00:05<00:37,  6.50it/s]Batches:  11%|#         | 29/272 [00:05<00:36,  6.62it/s]Batches:  11%|#1        | 30/272 [00:05<00:34,  6.93it/s]Batches:  11%|#1        | 31/272 [00:05<00:36,  6.63it/s]Batches:  12%|#1        | 32/272 [00:06<00:35,  6.72it/s]Batches:  12%|#2        | 33/272 [00:06<00:36,  6.51it/s]Batches:  12%|#2        | 34/272 [00:06<00:36,  6.45it/s]Batches:  13%|#2        | 35/272 [00:06<00:35,  6.67it/s]Batches:  13%|#3        | 36/272 [00:06<00:33,  7.02it/s]Batches:  14%|#3        | 37/272 [00:06<00:33,  6.95it/s]Batches:  14%|#3        | 38/272 [00:06<00:33,  7.02it/s]Batches:  14%|#4        | 39/272 [00:07<00:32,  7.08it/s]Batches:  15%|#4        | 40/272 [00:07<00:33,  6.92it/s]Batches:  15%|#5        | 41/272 [00:07<00:36,  6.35it/s]Batches:  15%|#5        | 42/272 [00:07<00:35,  6.51it/s]Batches:  16%|#5        | 43/272 [00:07<00:34,  6.70it/s]Batches:  16%|#6        | 44/272 [00:07<00:33,  6.74it/s]Batches:  17%|#6        | 45/272 [00:08<00:32,  7.08it/s]Batches:  17%|#6        | 46/272 [00:08<00:33,  6.74it/s]Batches:  17%|#7        | 47/272 [00:08<00:31,  7.09it/s]Batches:  18%|#7        | 48/272 [00:08<00:31,  7.01it/s]Batches:  18%|#8        | 49/272 [00:08<00:30,  7.29it/s]Batches:  18%|#8        | 50/272 [00:08<00:30,  7.29it/s]Batches:  19%|#8        | 51/272 [00:08<00:30,  7.28it/s]Batches:  19%|#9        | 52/272 [00:08<00:30,  7.16it/s]Batches:  19%|#9        | 53/272 [00:09<00:30,  7.14it/s]Batches:  20%|#9        | 54/272 [00:09<00:31,  6.87it/s]Batches:  20%|##        | 55/272 [00:09<00:30,  7.05it/s]Batches:  21%|##        | 56/272 [00:09<00:29,  7.39it/s]Batches:  21%|##        | 57/272 [00:09<00:28,  7.48it/s]Batches:  21%|##1       | 58/272 [00:09<00:29,  7.34it/s]Batches:  22%|##1       | 59/272 [00:09<00:28,  7.55it/s]Batches:  22%|##2       | 60/272 [00:10<00:28,  7.37it/s]Batches:  22%|##2       | 61/272 [00:10<00:28,  7.51it/s]Batches:  23%|##2       | 62/272 [00:10<00:28,  7.45it/s]Batches:  23%|##3       | 63/272 [00:10<00:28,  7.46it/s]Batches:  24%|##3       | 64/272 [00:10<00:27,  7.61it/s]Batches:  24%|##3       | 65/272 [00:10<00:26,  7.72it/s]Batches:  24%|##4       | 66/272 [00:10<00:26,  7.80it/s]Batches:  25%|##4       | 67/272 [00:10<00:25,  7.89it/s]Batches:  25%|##5       | 68/272 [00:11<00:27,  7.53it/s]Batches:  25%|##5       | 69/272 [00:11<00:26,  7.61it/s]Batches:  26%|##5       | 70/272 [00:11<00:26,  7.54it/s]Batches:  26%|##6       | 71/272 [00:11<00:26,  7.59it/s]Batches:  26%|##6       | 72/272 [00:11<00:26,  7.42it/s]Batches:  27%|##6       | 73/272 [00:11<00:25,  7.69it/s]Batches:  27%|##7       | 74/272 [00:11<00:25,  7.92it/s]Batches:  28%|##7       | 75/272 [00:12<00:25,  7.82it/s]Batches:  28%|##7       | 76/272 [00:12<00:25,  7.82it/s]Batches:  28%|##8       | 77/272 [00:12<00:27,  7.20it/s]Batches:  29%|##8       | 78/272 [00:12<00:27,  6.96it/s]Batches:  29%|##9       | 79/272 [00:12<00:28,  6.79it/s]Batches:  29%|##9       | 80/272 [00:12<00:26,  7.24it/s]Batches:  30%|##9       | 81/272 [00:12<00:25,  7.55it/s]Batches:  30%|###       | 82/272 [00:13<00:28,  6.65it/s]Batches:  31%|###       | 83/272 [00:13<00:26,  7.12it/s]Batches:  31%|###       | 84/272 [00:13<00:24,  7.64it/s]Batches:  31%|###1      | 85/272 [00:13<00:24,  7.55it/s]Batches:  32%|###1      | 86/272 [00:13<00:25,  7.25it/s]Batches:  32%|###1      | 87/272 [00:13<00:24,  7.53it/s]Batches:  32%|###2      | 88/272 [00:13<00:24,  7.48it/s]Batches:  33%|###3      | 90/272 [00:14<00:22,  8.14it/s]Batches:  33%|###3      | 91/272 [00:14<00:22,  8.06it/s]Batches:  34%|###3      | 92/272 [00:14<00:22,  8.02it/s]Batches:  34%|###4      | 93/272 [00:14<00:21,  8.27it/s]Batches:  35%|###4      | 94/272 [00:14<00:20,  8.54it/s]Batches:  35%|###4      | 95/272 [00:14<00:21,  8.13it/s]Batches:  35%|###5      | 96/272 [00:14<00:22,  7.72it/s]Batches:  36%|###5      | 97/272 [00:14<00:22,  7.87it/s]Batches:  36%|###6      | 98/272 [00:15<00:21,  8.28it/s]Batches:  36%|###6      | 99/272 [00:15<00:21,  8.08it/s]Batches:  37%|###6      | 100/272 [00:15<00:20,  8.24it/s]Batches:  38%|###7      | 102/272 [00:15<00:19,  8.70it/s]Batches:  38%|###8      | 104/272 [00:15<00:19,  8.59it/s]Batches:  39%|###8      | 105/272 [00:15<00:19,  8.48it/s]Batches:  39%|###8      | 106/272 [00:15<00:19,  8.38it/s]Batches:  39%|###9      | 107/272 [00:16<00:20,  8.05it/s]Batches:  40%|###9      | 108/272 [00:16<00:19,  8.42it/s]Batches:  40%|####      | 109/272 [00:16<00:19,  8.56it/s]Batches:  40%|####      | 110/272 [00:16<00:19,  8.22it/s]Batches:  41%|####      | 111/272 [00:16<00:18,  8.58it/s]Batches:  42%|####1     | 113/272 [00:16<00:16,  9.47it/s]Batches:  42%|####1     | 114/272 [00:16<00:17,  9.10it/s]Batches:  42%|####2     | 115/272 [00:17<00:18,  8.38it/s]Batches:  43%|####3     | 117/272 [00:17<00:18,  8.60it/s]Batches:  44%|####3     | 119/272 [00:17<00:16,  9.08it/s]Batches:  44%|####4     | 120/272 [00:17<00:16,  9.16it/s]Batches:  45%|####4     | 122/272 [00:17<00:16,  8.92it/s]Batches:  45%|####5     | 123/272 [00:17<00:16,  9.12it/s]Batches:  46%|####5     | 125/272 [00:18<00:16,  8.99it/s]Batches:  46%|####6     | 126/272 [00:18<00:16,  8.73it/s]Batches:  47%|####6     | 127/272 [00:18<00:16,  8.93it/s]Batches:  47%|####7     | 128/272 [00:18<00:16,  8.62it/s]Batches:  47%|####7     | 129/272 [00:18<00:16,  8.65it/s]Batches:  48%|####7     | 130/272 [00:18<00:17,  8.13it/s]Batches:  48%|####8     | 131/272 [00:18<00:16,  8.41it/s]Batches:  49%|####8     | 132/272 [00:18<00:16,  8.54it/s]Batches:  49%|####8     | 133/272 [00:19<00:15,  8.91it/s]Batches:  50%|####9     | 135/272 [00:19<00:14,  9.74it/s]Batches:  50%|#####     | 136/272 [00:19<00:14,  9.18it/s]Batches:  50%|#####     | 137/272 [00:19<00:15,  8.95it/s]Batches:  51%|#####1    | 139/272 [00:19<00:14,  9.44it/s]Batches:  51%|#####1    | 140/272 [00:19<00:13,  9.56it/s]Batches:  52%|#####2    | 142/272 [00:19<00:13,  9.68it/s]Batches:  53%|#####2    | 143/272 [00:20<00:13,  9.49it/s]Batches:  53%|#####3    | 145/272 [00:20<00:13,  9.40it/s]Batches:  54%|#####3    | 146/272 [00:20<00:13,  9.45it/s]Batches:  54%|#####4    | 147/272 [00:20<00:13,  9.57it/s]Batches:  54%|#####4    | 148/272 [00:20<00:12,  9.56it/s]Batches:  55%|#####4    | 149/272 [00:20<00:13,  9.33it/s]Batches:  55%|#####5    | 150/272 [00:20<00:12,  9.40it/s]Batches:  56%|#####5    | 151/272 [00:21<00:14,  8.14it/s]Batches:  56%|#####6    | 153/272 [00:21<00:13,  8.63it/s]Batches:  57%|#####6    | 155/272 [00:21<00:12,  9.29it/s]Batches:  57%|#####7    | 156/272 [00:21<00:12,  9.08it/s]Batches:  58%|#####8    | 158/272 [00:21<00:12,  9.28it/s]Batches:  59%|#####8    | 160/272 [00:21<00:11,  9.64it/s]Batches:  59%|#####9    | 161/272 [00:22<00:11,  9.58it/s]Batches:  60%|#####9    | 163/272 [00:22<00:10, 10.12it/s]Batches:  61%|######    | 165/272 [00:22<00:10, 10.52it/s]Batches:  61%|######1   | 167/272 [00:22<00:10, 10.16it/s]Batches:  62%|######2   | 169/272 [00:22<00:09, 10.36it/s]Batches:  63%|######2   | 171/272 [00:22<00:09, 10.26it/s]Batches:  64%|######3   | 173/272 [00:23<00:09, 10.37it/s]Batches:  64%|######4   | 175/272 [00:23<00:09, 10.01it/s]Batches:  65%|######5   | 177/272 [00:23<00:09, 10.25it/s]Batches:  66%|######5   | 179/272 [00:23<00:09, 10.32it/s]Batches:  67%|######6   | 181/272 [00:23<00:08, 10.46it/s]Batches:  67%|######7   | 183/272 [00:24<00:08, 10.57it/s]Batches:  68%|######8   | 185/272 [00:24<00:07, 11.24it/s]Batches:  69%|######8   | 187/272 [00:24<00:07, 11.07it/s]Batches:  69%|######9   | 189/272 [00:24<00:07, 11.54it/s]Batches:  70%|#######   | 191/272 [00:24<00:07, 10.74it/s]Batches:  71%|#######   | 193/272 [00:25<00:07, 10.40it/s]Batches:  72%|#######1  | 195/272 [00:25<00:06, 11.05it/s]Batches:  72%|#######2  | 197/272 [00:25<00:06, 11.24it/s]Batches:  73%|#######3  | 199/272 [00:25<00:06, 11.59it/s]Batches:  74%|#######3  | 201/272 [00:25<00:06, 11.59it/s]Batches:  75%|#######4  | 203/272 [00:25<00:06, 11.34it/s]Batches:  75%|#######5  | 205/272 [00:26<00:05, 11.64it/s]Batches:  76%|#######6  | 207/272 [00:26<00:05, 11.78it/s]Batches:  77%|#######6  | 209/272 [00:26<00:05, 12.08it/s]Batches:  78%|#######7  | 211/272 [00:26<00:05, 12.00it/s]Batches:  78%|#######8  | 213/272 [00:26<00:04, 12.15it/s]Batches:  79%|#######9  | 215/272 [00:26<00:04, 12.30it/s]Batches:  80%|#######9  | 217/272 [00:27<00:04, 12.53it/s]Batches:  81%|########  | 219/272 [00:27<00:04, 12.62it/s]Batches:  81%|########1 | 221/272 [00:27<00:04, 12.73it/s]Batches:  82%|########1 | 223/272 [00:27<00:03, 13.13it/s]Batches:  83%|########2 | 225/272 [00:27<00:03, 13.12it/s]Batches:  83%|########3 | 227/272 [00:27<00:03, 12.99it/s]Batches:  84%|########4 | 229/272 [00:27<00:03, 13.43it/s]Batches:  85%|########4 | 231/272 [00:28<00:03, 13.44it/s]Batches:  86%|########5 | 233/272 [00:28<00:02, 13.37it/s]Batches:  86%|########6 | 235/272 [00:28<00:02, 13.17it/s]Batches:  87%|########7 | 237/272 [00:28<00:02, 14.01it/s]Batches:  88%|########7 | 239/272 [00:28<00:02, 14.12it/s]Batches:  89%|########8 | 241/272 [00:28<00:02, 14.41it/s]Batches:  89%|########9 | 243/272 [00:28<00:02, 14.35it/s]Batches:  90%|######### | 245/272 [00:29<00:01, 14.26it/s]Batches:  91%|######### | 247/272 [00:29<00:01, 14.80it/s]Batches:  92%|#########1| 249/272 [00:29<00:01, 14.68it/s]Batches:  92%|#########2| 251/272 [00:29<00:01, 15.15it/s]Batches:  93%|#########3| 253/272 [00:29<00:01, 15.42it/s]Batches:  94%|#########3| 255/272 [00:29<00:01, 15.79it/s]Batches:  94%|#########4| 257/272 [00:29<00:00, 15.60it/s]Batches:  95%|#########5| 259/272 [00:29<00:00, 15.67it/s]Batches:  96%|#########5| 261/272 [00:30<00:00, 16.56it/s]Batches:  97%|#########7| 264/272 [00:30<00:00, 17.80it/s]Batches:  98%|#########8| 267/272 [00:30<00:00, 18.68it/s]Batches:  99%|#########9| 270/272 [00:30<00:00, 19.92it/s]Batches: 100%|##########| 272/272 [00:30<00:00,  8.91it/s]
+2026-05-04 18:09:08,839 - INFO - FAISS index: 8693 vectors
+2026-05-04 18:09:10,487 - INFO - Cache saved
+2026-05-04 18:09:18,502 - INFO - Cache saved
+2026-05-04 18:09:18,504 - INFO - Dataset hash saved: 137657a6...
+   Embedding norms — mean: 1.0000  std: 0.0000  (should be ~1.000 ± 0.001)
+
+Embeddings done!
+
+======================================================================
+TRAINING HYBRID MODEL  [GENERAL mode]
+======================================================================
+
+   Train+: 196 | Val+: 84
+
+[1/4] Training positives...
+   Valid: 196
+
+[2/4] Mining negatives...
+
+   Mining medium-hard negatives (10th–40th pct TF-IDF)...
+   Mined 127 medium-hard negatives
+
+   Total: 392  (pos=196, neg=196)
+
+[3/4] Learning fusion weights...
+   Mode:    general
+   Weights: TF-IDF=0.538, BERT=0.462
+   Score sep (fused): pos=0.385 neg=0.096 gap=0.289
+
+[4/4] Validation + calibration + threshold...
+
+   Mining medium-hard negatives (10th–40th pct TF-IDF)...
+   Mined 54 medium-hard negatives
+
+   Val: 168 (pos=84, neg=84)
+   Calibrator fitted: True
+   Calibrated range: [0.235, 0.964]
+     Pos mean: 0.660
+     Neg mean: 0.340
+
+   Optimizing threshold (BAC)...
+   Learned=0.455  Applied=0.500 (floor=0.50)
+   Acc=0.881  Prec=0.944  Rec=0.810  F1=0.872  BAC=0.881
+   AUC=0.896
+
+   [Sparsity adj] 0.500 → 0.480 (floor=0.48)
+
+======================================================================
+HELD-OUT TEST SET
+======================================================================
+
+   Mining medium-hard negatives (10th–40th pct TF-IDF)...
+   Mined 130 medium-hard negatives
+Test: 400 (pos=200, neg=200)
+
+======================================================================
+MODEL EVALUATION  [GENERAL mode]
+======================================================================
+
+   Eval: 400 (pos=200, neg=200)
+   Model: BAAI/bge-base-en-v1.5  ⚠ General-purpose
+
+   RAW Hybrid:
+     Pos: 0.378 ± 0.183
+     Neg: 0.085 ± 0.059
+     Sep: 0.293
+
+   CALIBRATED:
+     Pos: 0.650 ± 0.192
+     Neg: 0.323 ± 0.065
+     Sep: 0.327
+
+[Classification] (threshold=0.480):
+   Accuracy:   0.880  (88.0%)
+   Bal Acc:    0.880
+   Precision:  0.981
+   Recall:     0.775
+   F1:         0.866
+   AUC-ROC:    0.905
+   Avg Prec:   0.936
+
+[Retrieval] (200 positives):
+   Recall@10  : 0.360  (36.0%)
+   Recall@20  : 0.495  (49.5%)
+   Recall@50  : 0.560  (56.0%)
+   Recall@100 : 0.585  (58.5%)
+
+======================================================================
+SAMPLE NOVELTY PREDICTIONS — v10 [GENERAL MODE]
+======================================================================
+
+──────────────────────────────────────────────────────────────────────
+  Case A — Deep RL + CNN (EXPECT: REJECT)
+──────────────────────────────────────────────────────────────────────
+
+======================================================================
+NOVELTY PREDICTION  [GENERAL mode]
+======================================================================
+
+[Query]: A neural network processing system and method for real-time pattern recognition
+        using deep reinforcement learning and convolutional neural net...
+
+[Scores]:
+   Max Calibrated:           0.8370  (83.7%)
+   Effective Cal (dampened): 0.8370  (no dampening)
+   Top-3 Avg Calibrated:     0.8295  (83.0%)
+   Top-5 Avg Calibrated:     0.8254  (82.5%)
+   Top-result TF-IDF:        0.3273  (drift if < 0.2)
+   Top-result BERT:          0.8371  (strong drift if > 0.8 AND max_tfidf < 0.22)
+   Median top-5 TF-IDF:      0.2883  (coherence floor: 0.15)
+   Max TF-IDF (all results): 0.3273
+   Max Hybrid (all results): 0.5629
+
+[Decision Rules — v10 general mode]:
+   Step 0 — Dampening:        ○ skip  [max_tfidf=0.327 < 0.15 → effective_cal=0.837]
+   Step 1 — Strong Drift:     ○ skip  [top_bert=0.837>0.8 & max_tfidf=0.327<0.22]
+   Rule 1 — Drift Safeguard:  ○ skip  [top_tfidf=0.327<0.2 & top_bert=0.837>0.72]
+   Rule 2 — Domain Coherence: ○ skip  [median_top5=0.288<0.15 & eff_cal=0.837>=0.400]
+   Rule 3 — TF-IDF Override:  ○ skip  [max_tfidf=0.327<0.15 & hybrid=0.563<0.55]
+   Rule 4 — Out-of-domain:    ○ skip  [eff_cal=0.837<floor=0.400]
+   Rule 5 — Dual Rejection:   ⚡ WOULD REJECT  [cond1=True: eff_cal=0.837>=0.480, cond2=True: top3=0.830>=0.480]  ← both must be True now (FIX-V10-4)
+
+[Config — v10 general mode]:
+   USE_PATENT_BERT     : True
+   Active mode         : general
+   Threshold           : 0.480
+   Novelty floor       : 0.400
+   Strong drift guard  : top_bert>0.8 & max_tfidf<0.22 → ACCEPT  [NEW v10]
+   Drift guard (Rule1) : top_tfidf<0.2 & top_bert>0.72
+   Coherence guard     : median_top5_tfidf<0.15
+   TF-IDF override     : max_tfidf<0.15 & hybrid<0.55
+   TF-IDF dampening    : max_tfidf<0.15 → cal*0.6  [NEW v10]
+   Reject condition    : eff_cal>=0.480 AND top3>=0.480  [stricter, FIX-V10-4]
+   Model               : BAAI/bge-base-en-v1.5 ⚠ [general — mode auto-corrected]
+   Weights             : TF-IDF=0.538, BERT=0.462
+   Inference           : 0.432s
+   Reason              : Strong prior art match found
+   Confidence          : High
+
+============================================================
+MOST SIMILAR PATENT
+============================================================
+  ID        : 5371835
+  Title     : Inductively coupled neural network...
+  TF-IDF    : 0.3273  
+  BERT      : 0.8371  
+  Hybrid    : 0.5629
+  Calibrated: 0.8370
+
+============================================================
+TOP 10 SIMILAR PATENTS
+============================================================
+
+ 1. 5371835  Inductively coupled neural network...
+    TF=0.3273 | BERT=0.8371 | Hybrid=0.5629 | Cal=0.8370
+
+ 2. 12175767  End-to-end object tracking using neural networks with attent...
+    TF=0.2896 | BERT=0.8635 | Hybrid=0.5549 | Cal=0.8314
+
+ 3. 7971450  Deep-freezer with neural network...
+    TF=0.2733 | BERT=0.8489 | Hybrid=0.5393 | Cal=0.8202
+
+ 4. 6212438  Method and apparatus for generating a model of an industrial...
+    TF=0.2883 | BERT=0.8315 | Hybrid=0.5393 | Cal=0.8202
+
+ 5. 6490571  Method and apparatus for neural networking using semantic at...
+    TF=0.2534 | BERT=0.8659 | Hybrid=0.5365 | Cal=0.8181
+
+ 6. 5272723  Waveform equalizer using a neural network...
+    TF=0.2420 | BERT=0.8253 | Hybrid=0.5116 | Cal=0.7989
+
+ 7. 5357597  Convolutional expert neural system (ConExNS)...
+    TF=0.1499 | BERT=0.8844 | Hybrid=0.4894 | Cal=0.7804
+
+ 8. 10043110  Scene understanding using a neurosynaptic system...
+    TF=0.1631 | BERT=0.8599 | Hybrid=0.4851 | Cal=0.7768
+
+ 9. 6889085  Method and system for forming an acoustic signal from neural...
+    TF=0.1663 | BERT=0.8207 | Hybrid=0.4688 | Cal=0.7623
+
+10. 5327228  System for improving the quality of television pictures usin...
+    TF=0.1413 | BERT=0.8427 | Hybrid=0.4655 | Cal=0.7593
+
+============================================================
+  [DECISION]:   [REJECT] Not Novel — Prior Art Detected
+  [REASON]:     Strong prior art match found
+  [CONFIDENCE]: High
+============================================================
+
+──────────────────────────────────────────────────────────────────────
+  Case B — RLHF / LLM alignment (EXPECT: ACCEPT — post-2022 technology)
+──────────────────────────────────────────────────────────────────────
+
+======================================================================
+NOVELTY PREDICTION  [GENERAL mode]
+======================================================================
+
+[Query]: A method for aligning large language models using reinforcement learning from
+        human feedback (RLHF), comprising: a reward model fine-tuned on ...
+
+[Scores]:
+   Max Calibrated:           0.7987  (79.9%)
+   Effective Cal (dampened): 0.7987  (no dampening)
+   Top-3 Avg Calibrated:     0.7811  (78.1%)
+   Top-5 Avg Calibrated:     0.7674  (76.7%)
+   Top-result TF-IDF:        0.2523  (drift if < 0.2)
+   Top-result BERT:          0.8128  (strong drift if > 0.8 AND max_tfidf < 0.22)
+   Median top-5 TF-IDF:      0.1619  (coherence floor: 0.15)
+   Max TF-IDF (all results): 0.2523
+   Max Hybrid (all results): 0.5113
+
+[Decision Rules — v10 general mode]:
+   Step 0 — Dampening:        ○ skip  [max_tfidf=0.252 < 0.15 → effective_cal=0.799]
+   Step 1 — Strong Drift:     ○ skip  [top_bert=0.813>0.8 & max_tfidf=0.252<0.22]
+   Rule 1 — Drift Safeguard:  ○ skip  [top_tfidf=0.252<0.2 & top_bert=0.813>0.72]
+   Rule 2 — Domain Coherence: ○ skip  [median_top5=0.162<0.15 & eff_cal=0.799>=0.400]
+   Rule 3 — TF-IDF Override:  ○ skip  [max_tfidf=0.252<0.15 & hybrid=0.511<0.55]
+   Rule 4 — Out-of-domain:    ○ skip  [eff_cal=0.799<floor=0.400]
+   Rule 5 — Dual Rejection:   ⚡ WOULD REJECT  [cond1=True: eff_cal=0.799>=0.480, cond2=True: top3=0.781>=0.480]  ← both must be True now (FIX-V10-4)
+
+[Config — v10 general mode]:
+   USE_PATENT_BERT     : True
+   Active mode         : general
+   Threshold           : 0.480
+   Novelty floor       : 0.400
+   Strong drift guard  : top_bert>0.8 & max_tfidf<0.22 → ACCEPT  [NEW v10]
+   Drift guard (Rule1) : top_tfidf<0.2 & top_bert>0.72
+   Coherence guard     : median_top5_tfidf<0.15
+   TF-IDF override     : max_tfidf<0.15 & hybrid<0.55
+   TF-IDF dampening    : max_tfidf<0.15 → cal*0.6  [NEW v10]
+   Reject condition    : eff_cal>=0.480 AND top3>=0.480  [stricter, FIX-V10-4]
+   Model               : BAAI/bge-base-en-v1.5 ⚠ [general — mode auto-corrected]
+   Weights             : TF-IDF=0.538, BERT=0.462
+   Inference           : 0.462s
+   Reason              : Strong prior art match found
+   Confidence          : High
+
+============================================================
+MOST SIMILAR PATENT
+============================================================
+  ID        : 7689578
+  Title     : Dealing with annotation versioning through multiple versioning policies and mana...
+  TF-IDF    : 0.2523  
+  BERT      : 0.8128  
+  Hybrid    : 0.5113
+  Calibrated: 0.7987
+
+============================================================
+TOP 10 SIMILAR PATENTS
+============================================================
+
+ 1. 7689578  Dealing with annotation versioning through multiple versioni...
+    TF=0.2523 | BERT=0.8128 | Hybrid=0.5113 | Cal=0.7987
+
+ 2. 9565191  Global policy apparatus and related methods...
+    TF=0.2314 | BERT=0.7930 | Hybrid=0.4910 | Cal=0.7818
+
+ 3. 6490571  Method and apparatus for neural networking using semantic at...
+    TF=0.1619 | BERT=0.8276 | Hybrid=0.4696 | Cal=0.7630
+
+ 4. 9672827  Real-time conversation model generation...
+    TF=0.1191 | BERT=0.8420 | Hybrid=0.4532 | Cal=0.7479
+
+ 5. 9297663  Adaptive and personalized navigation system...
+    TF=0.1442 | BERT=0.8073 | Hybrid=0.4507 | Cal=0.7455
+
+ 6. 9190063  Multi-language speech recognition system...
+    TF=0.1403 | BERT=0.8113 | Hybrid=0.4504 | Cal=0.7452
+
+ 7. 11710078  System and method for incremental training of machine learni...
+    TF=0.1479 | BERT=0.8016 | Hybrid=0.4501 | Cal=0.7449
+
+ 8. 10446142  Crafting feedback dialogue with a digital assistant...
+    TF=0.1141 | BERT=0.8345 | Hybrid=0.4470 | Cal=0.7420
+
+ 9. 11269665  Method and system for user experience personalization in dat...
+    TF=0.1368 | BERT=0.8061 | Hybrid=0.4461 | Cal=0.7411
+
+10. 6212438  Method and apparatus for generating a model of an industrial...
+    TF=0.1421 | BERT=0.7849 | Hybrid=0.4392 | Cal=0.7344
+
+============================================================
+  [DECISION]:   [REJECT] Not Novel — Prior Art Detected
+  [REASON]:     Strong prior art match found
+  [CONFIDENCE]: High
+============================================================
+
+──────────────────────────────────────────────────────────────────────
+  Case C — Bicycle combination lock (EXPECT: ACCEPT — unrelated domain)
+──────────────────────────────────────────────────────────────────────
+
+======================================================================
+NOVELTY PREDICTION  [GENERAL mode]
+======================================================================
+
+[Query]: A portable bicycle security device comprising a hardened steel shackle
+        and a four-digit numeric combination dial mechanism. The user selects a...
+
+[Scores]:
+   Max Calibrated:           0.7793  (77.9%)
+   Effective Cal (dampened): 0.7793  (no dampening)
+   Top-3 Avg Calibrated:     0.7584  (75.8%)
+   Top-5 Avg Calibrated:     0.7529  (75.3%)
+   Top-result TF-IDF:        0.1418  (drift if < 0.2)
+   Top-result BERT:          0.8910  (strong drift if > 0.8 AND max_tfidf < 0.22)
+   Median top-5 TF-IDF:      0.1288  (coherence floor: 0.15)
+   Max TF-IDF (all results): 0.1506
+   Max Hybrid (all results): 0.4881
+
+[Decision Rules — v10 general mode]:
+   Step 0 — Dampening:        ○ skip  [max_tfidf=0.151 < 0.15 → effective_cal=0.779]
+   Step 1 — Strong Drift:     ⚡ TRIGGERED → ACCEPT  [top_bert=0.891>0.8 & max_tfidf=0.151<0.22]
+   Rule 1 — Drift Safeguard:  ⚡ TRIGGERED → ACCEPT  [top_tfidf=0.142<0.2 & top_bert=0.891>0.72]
+   Rule 2 — Domain Coherence: ⚡ TRIGGERED → ACCEPT  [median_top5=0.129<0.15 & eff_cal=0.779>=0.400]
+   Rule 3 — TF-IDF Override:  ○ skip  [max_tfidf=0.151<0.15 & hybrid=0.488<0.55]
+   Rule 4 — Out-of-domain:    ○ skip  [eff_cal=0.779<floor=0.400]
+   Rule 5 — Dual Rejection:   ⚡ WOULD REJECT  [cond1=True: eff_cal=0.779>=0.480, cond2=True: top3=0.758>=0.480]  ← both must be True now (FIX-V10-4)
+
+[Config — v10 general mode]:
+   USE_PATENT_BERT     : True
+   Active mode         : general
+   Threshold           : 0.480
+   Novelty floor       : 0.400
+   Strong drift guard  : top_bert>0.8 & max_tfidf<0.22 → ACCEPT  [NEW v10]
+   Drift guard (Rule1) : top_tfidf<0.2 & top_bert>0.72
+   Coherence guard     : median_top5_tfidf<0.15
+   TF-IDF override     : max_tfidf<0.15 & hybrid<0.55
+   TF-IDF dampening    : max_tfidf<0.15 → cal*0.6  [NEW v10]
+   Reject condition    : eff_cal>=0.480 AND top3>=0.480  [stricter, FIX-V10-4]
+   Model               : BAAI/bge-base-en-v1.5 ⚠ [general — mode auto-corrected]
+   Weights             : TF-IDF=0.538, BERT=0.462
+   Inference           : 0.457s
+   Reason              : Strong Drift Override — max TF-IDF (0.151) < 0.22 with high BERT (0.891) > 0.8. High semantic similarity but zero lexical overlap → novel.
+   Confidence          : High (strong drift override fired)
+
+============================================================
+MOST SIMILAR PATENT
+============================================================
+  ID        : 4970881
+  Title     : Code variable combination lock...
+  TF-IDF    : 0.1418  ⚠ LOW
+  BERT      : 0.8910  ⚠ STRONG DRIFT
+  Hybrid    : 0.4881
+  Calibrated: 0.7793
+
+============================================================
+TOP 10 SIMILAR PATENTS
+============================================================
+
+ 1. 4970881  Code variable combination lock...
+    TF=0.1418 | BERT=0.8910 ⚠ DRIFT | Hybrid=0.4881 | Cal=0.7793
+
+ 2. 8902061  Systems and methods for remote building security and automat...
+    TF=0.1506 | BERT=0.8086 ⚠ DRIFT | Hybrid=0.4547 | Cal=0.7493
+
+ 3. 4911646  Jack security device...
+    TF=0.1040 | BERT=0.8569 ⚠ DRIFT | Hybrid=0.4520 | Cal=0.7467
+
+ 4. 4857677  Dial device...
+    TF=0.1288 | BERT=0.8279 ⚠ DRIFT | Hybrid=0.4519 | Cal=0.7466
+
+ 5. 4499681  Security device for firearms...
+    TF=0.1076 | BERT=0.8431 ⚠ DRIFT | Hybrid=0.4475 | Cal=0.7425
+
+ 6. 5278395  Portable electronic access controlled system for parking met...
+    TF=0.1132 | BERT=0.8362 ⚠ DRIFT | Hybrid=0.4474 | Cal=0.7423
+
+ 7. 9609020  Systems and methods to enforce security policies on the load...
+    TF=0.1269 | BERT=0.8183 ⚠ DRIFT | Hybrid=0.4465 | Cal=0.7414
+
+ 8. 9714067  Bicycle chain device...
+    TF=0.0940 | BERT=0.8553 ⚠ DRIFT | Hybrid=0.4459 | Cal=0.7409
+
+ 9. 5005390  Lock for quick release mechanism on bicycle wheels, seats an...
+    TF=0.0912 | BERT=0.8583 ⚠ DRIFT | Hybrid=0.4458 | Cal=0.7408
+
+10. 7152439  Padlock...
+    TF=0.0794 | BERT=0.8644 ⚠ DRIFT | Hybrid=0.4390 | Cal=0.7343
+
+============================================================
+  [DECISION]:   [ACCEPT] Potentially Novel
+  [REASON]:     Strong Drift Override — max TF-IDF (0.151) < 0.22 with high BERT (0.891) > 0.8. High semantic similarity but zero lexical overlap → novel.
+  [CONFIDENCE]: High (strong drift override fired)
+============================================================
+
+======================================================================
+FINAL SUMMARY — v10  [GENERAL MODE]
+======================================================================
+  USE_PATENT_BERT   : True
+  Active mode       : general  (auto-corrected if fallback occurred)
+  BERT Model        : BAAI/bge-base-en-v1.5
+  ⚠  General-purpose model active.
+     Strong drift override compensates for semantic collapse.
+     pip install --upgrade transformers tokenizers sentencepiece
+     → re-run to enable Patent-BERT
+  Threshold         : 0.480
+  Novelty floor     : 0.400
+
+  v10 Decision Steps [general mode]:
+    Step 0 Dampen:      max_tfidf<0.15 → cal*0.6  [NEW v10]
+    Step 1 StrongDrift: top_bert>0.8 & max_tfidf<0.22 → ACCEPT  [NEW v10]
+    Rule 1 Drift:       top_tfidf<0.2 & top_bert>0.72 → ACCEPT
+    Rule 2 Coherence:   median_top5_tfidf<0.15 → ACCEPT
+    Rule 3 Override:    max_tfidf<0.15 & hybrid<0.55 → ACCEPT
+    Rule 4 Floor:       eff_cal<0.400 → ACCEPT
+    Rule 5 Reject:      eff_cal>=0.480 AND top3>=0.480 → REJECT  [stricter v10]
+  Fusion weights    : TF-IDF=0.538, BERT=0.462
+  Calibrator fitted : True
+
+  Test Results:
+    Accuracy    : 0.880
+    Bal. Acc.   : 0.880
+    Precision   : 0.981
+    Recall      : 0.775
+    F1          : 0.866
+    AUC-ROC     : 0.905
+    Recall@10    : 0.360  (36.0%)
+    Recall@20    : 0.495  (49.5%)
+    Recall@50    : 0.560  (56.0%)
+    Recall@100   : 0.585  (58.5%)
+
+  Sample Decisions:
+    ✓ A — Deep RL + CNN (EXPECT: REJECT)... → [REJECT] Not Novel — Prior Art Detected
+    ✗ B — RLHF / LLM alignment (EXPECT: ACCEPT — post-2022 te... → [REJECT] Not Novel — Prior Art Detected
+    ✓ C — Bicycle combination lock (EXPECT: ACCEPT — unrelate... → [ACCEPT] Potentially Novel
+
+  v10 KEY FIXES vs v9:
+    FIX-V10-1: Patent-BERT tried via SentenceTransformer first
+               (avoids slow tokenizer error — upgrade path provided)
+    FIX-V10-2: Strong drift override (top_bert>0.80 & max_tfidf<0.22)
+               Fires BEFORE Rule 1 — catches RLHF, bicycle, OOD
+    FIX-V10-3: TF-IDF dampening (max_tfidf<0.15 → cal*0.60)
+               Prevents high BERT score from inflating calibrated score
+    FIX-V10-4: Rule 5 stricter: top3 must be >= threshold (not -0.10)
+               Harder to reject — needs strong double confirmation
+    FIX-V10-5: Coherence TFIDF median relaxed (0.08→0.12, 0.10→0.15)
+    FIX-V10-6: Mode auto-corrected to 'general' when Patent-BERT fails
+               Correct thresholds apply regardless of which model loads
+
+  System ready.
