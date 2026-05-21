@@ -1,0 +1,4 @@
+[00:19, 02/03/2026] NIT_Dev: https://patentsview.org/download/data-download-tables
+[00:20, 02/03/2026] NIT_Dev: https://s3.amazonaws.com/data.patentsview.org/download/g_patent.tsv.zip
+[00:20, 02/03/2026] NIT_Dev: https://s3.amazonaws.com/data.patentsview.org/download/g_patent_abstract.tsv.zip
+[00:21, 02/03/2026] NIT_Dev: https://s3.amazonaws.com/data.patentsview.org/download/g_us_patent_citation.tsv.zip
